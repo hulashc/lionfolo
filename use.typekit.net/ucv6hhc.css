@@ -1,0 +1,56 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * area-normal:
+ *   - http://typekit.com/eulas/0000000000000000775ac6b4
+ *   - http://typekit.com/eulas/0000000000000000775ac6bd
+ * artifex-hand-cf:
+ *   - http://typekit.com/eulas/00000000000000007735f8b8
+ * loretta:
+ *   - http://typekit.com/eulas/00000000000000007756f661
+ * professor:
+ *   - http://typekit.com/eulas/00000000000000007735bfe9
+ *
+ * © 2009-2026 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2025-07-23 10:47:56 UTC"}*/
+
+@import url("../p.typekit.net/pf953.css?s=1&amp;k=ucv6hhc&amp;ht=tk&amp;f=37782.48600.49404.51697.60640&amp;a=263877693&amp;app=typekit&amp;e=css");
+
+@font-face {
+font-family:"professor";
+src:url("af/9c62c4/00000000000000007735bfe9/31/le196?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3") format("woff2"),url("af/9c62c4/00000000000000007735bfe9/31/de196?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3") format("woff"),url("af/9c62c4/00000000000000007735bfe9/31/ae196?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3") format("opentype");
+font-display:swap;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"loretta";
+src:url("af/c023e9/00000000000000007756f661/31/le196?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3") format("woff2"),url("af/c023e9/00000000000000007756f661/31/de196?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3") format("woff"),url("af/c023e9/00000000000000007756f661/31/ae196?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3") format("opentype");
+font-display:swap;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"artifex-hand-cf";
+src:url("af/64445b/00000000000000007735f8b8/31/le196?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3") format("woff2"),url("af/64445b/00000000000000007735f8b8/31/de196?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3") format("woff"),url("af/64445b/00000000000000007735f8b8/31/ae196?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3") format("opentype");
+font-display:swap;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"area-normal";
+src:url("af/d507b5/0000000000000000775ac6b4/31/l652f?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n7&amp;v=3") format("woff2"),url("af/d507b5/0000000000000000775ac6b4/31/d652f?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n7&amp;v=3") format("woff"),url("af/d507b5/0000000000000000775ac6b4/31/a652f?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n7&amp;v=3") format("opentype");
+font-display:swap;font-style:normal;font-weight:700;font-stretch:normal;
+}
+
+@font-face {
+font-family:"area-normal";
+src:url("af/12e45a/0000000000000000775ac6bd/31/le003?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n5&amp;v=3") format("woff2"),url("af/12e45a/0000000000000000775ac6bd/31/de003?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n5&amp;v=3") format("woff"),url("af/12e45a/0000000000000000775ac6bd/31/ae003?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n5&amp;v=3") format("opentype");
+font-display:swap;font-style:normal;font-weight:500;font-stretch:normal;
+}
+
+.tk-professor { font-family: "professor",sans-serif; }
+.tk-loretta { font-family: "loretta",serif; }
+.tk-artifex-hand-cf { font-family: "artifex-hand-cf",sans-serif; }
+.tk-area-normal { font-family: "area-normal",sans-serif; }
