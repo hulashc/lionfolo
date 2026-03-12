@@ -1,111 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 
-
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript">
-        var gform;
-        gform || (document.addEventListener("gform_main_scripts_loaded", function () {
-            gform.scriptsLoaded = !0
-        }), document.addEventListener("gform/theme/scripts_loaded", function () {
-            gform.themeScriptsLoaded = !0
-        }), window.addEventListener("DOMContentLoaded", function () {
-            gform.domLoaded = !0
-        }), gform = {
-            domLoaded: !1,
-            scriptsLoaded: !1,
-            themeScriptsLoaded: !1,
-            isFormEditor: () => "function" == typeof InitializeEditor,
-            callIfLoaded: function (o) {
-                return !(!gform.domLoaded || !gform.scriptsLoaded || !gform.themeScriptsLoaded && !gform
-                    .isFormEditor() || (gform.isFormEditor() && console.warn(
-                        "The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."
-                        ), o(), 0))
-            },
-            initializeOnLoaded: function (o) {
-                gform.callIfLoaded(o) || (document.addEventListener("gform_main_scripts_loaded", () => {
-                    gform.scriptsLoaded = !0, gform.callIfLoaded(o)
-                }), document.addEventListener("gform/theme/scripts_loaded", () => {
-                    gform.themeScriptsLoaded = !0, gform.callIfLoaded(o)
-                }), window.addEventListener("DOMContentLoaded", () => {
-                    gform.domLoaded = !0, gform.callIfLoaded(o)
-                }))
-            },
-            hooks: {
-                action: {},
-                filter: {}
-            },
-            addAction: function (o, r, e, t) {
-                gform.addHook("action", o, r, e, t)
-            },
-            addFilter: function (o, r, e, t) {
-                gform.addHook("filter", o, r, e, t)
-            },
-            doAction: function (o) {
-                gform.doHook("action", o, arguments)
-            },
-            applyFilters: function (o) {
-                return gform.doHook("filter", o, arguments)
-            },
-            removeAction: function (o, r) {
-                gform.removeHook("action", o, r)
-            },
-            removeFilter: function (o, r, e) {
-                gform.removeHook("filter", o, r, e)
-            },
-            addHook: function (o, r, e, t, n) {
-                null == gform.hooks[o][r] && (gform.hooks[o][r] = []);
-                var d = gform.hooks[o][r];
-                null == n && (n = r + "_" + d.length), gform.hooks[o][r].push({
-                    tag: n,
-                    callable: e,
-                    priority: t = null == t ? 10 : t
-                })
-            },
-            doHook: function (r, o, e) {
-                var t;
-                if (e = Array.prototype.slice.call(e, 1), null != gform.hooks[r][o] && ((o = gform.hooks[r][
-                        o
-                    ]).sort(function (o, r) {
-                        return o.priority - r.priority
-                    }), o.forEach(function (o) {
-                        "function" != typeof (t = o.callable) && (t = window[t]), "action" == r ? t
-                            .apply(null, e) : e[0] = t.apply(null, e)
-                    })), "filter" == r) return e[0]
-            },
-            removeHook: function (o, r, t, n) {
-                var e;
-                null != gform.hooks[o][r] && (e = (e = gform.hooks[o][r]).filter(function (o, r, e) {
-                    return !!(null != n && n != o.tag || null != t && t != o.priority)
-                }), gform.hooks[o][r] = e)
-            }
-        });
-    </script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 
     <title>Hulash Chand | Full-Stack Developer &amp; Data Engineer</title>
-    <link rel="preload"
-        href="wp-content/cache/perfmatters/lionheart-education.com/css/front.usedee5a.css?ver=1765270421" as="style" />
-    <link rel="stylesheet" id="perfmatters-used-css"
-        href="wp-content/cache/perfmatters/lionheart-education.com/css/front.usedee5a.css?ver=1765270421" media="all" />
-    <meta name="description"
-        content="Hulash Chand – Full-stack developer and data engineer based in Rochdale, UK. Building web apps, data pipelines, and creative ML projects with Next.js, Python, and Supabase." />
+
+    <link rel="preload" href="wp-content/cache/perfmatters/lionheart-education.com/css/front.usedee5a.css?ver=1765270421" as="style" />
+    <link rel="stylesheet" id="perfmatters-used-css" href="wp-content/cache/perfmatters/lionheart-education.com/css/front.usedee5a.css?ver=1765270421" media="all" />
+
+    <meta name="description" content="Hulash Chand – Full-stack developer and data engineer based in Rochdale, UK. Building web apps, data pipelines, and creative ML projects with Next.js, Python, and Supabase." />
     <link rel="canonical" href="index.html" />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Hulash Chand | Full-Stack Developer &amp; Data Engineer" />
-    <meta property="og:description"
-        content="Hulash Chand – Full-stack developer and data engineer based in Rochdale, UK. Building web apps, data pipelines, and creative ML projects with Next.js, Python, and Supabase." />
+    <meta property="og:description" content="Hulash Chand – Full-stack developer and data engineer based in Rochdale, UK. Building web apps, data pipelines, and creative ML projects with Next.js, Python, and Supabase." />
     <meta property="og:url" content="https://hulashc.github.io/lionfolo/" />
     <meta property="og:site_name" content="Hulash Chand" />
     <meta property="article:publisher" content="https://github.com/hulashc" />
     <meta property="article:modified_time" content="2026-03-10T17:00:00+00:00" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@hulashc" />
+
     <script type="application/ld+json" class="yoast-schema-graph">
         {
             "@context": "https://schema.org",
@@ -142,17 +60,15 @@
         }
     </script>
 
-
     <link rel='dns-prefetch' href='http://use.typekit.net/' />
+
     <style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
         img:is([sizes=auto i], [sizes^="auto,"i]) {
             contain-intrinsic-size: 3000px 1500px
         }
-
-        /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
     </style>
+
     <style id='classic-theme-styles-inline-css' type='text/css'>
-        /*! This file is auto-generated */
         .wp-block-button__link {
             color: #fff;
             background-color: #32373c;
@@ -162,83 +78,56 @@
             padding: calc(.667em + 2px) calc(1.333em + 2px);
             font-size: 1.125em
         }
-
         .wp-block-file__button {
             background: #32373c;
             color: #fff;
             text-decoration: none
         }
-
-        /*# sourceURL=/wp-includes/css/classic-themes.min.css */
     </style>
-    <link rel="stylesheet" id="wpa-css-css" type="text/css" media="all"
-        data-pmdelayedstyle="https://lionheart-education.com/wp-content/plugins/honeypot/includes/css/wpa.css?ver=2.3.04">
-    <link rel="stylesheet" id="toc-screen-css" type="text/css" media="all"
-        data-pmdelayedstyle="https://lionheart-education.com/wp-content/plugins/table-of-contents-plus/screen.min.css?ver=2411.1">
+
     <style id='toc-screen-inline-css' type='text/css'>
         div#toc_container {
             width: 100%;
         }
-
-        /*# sourceURL=toc-screen-inline-css */
     </style>
-    <link rel='stylesheet' id='typekit-fonts-css' href='../use.typekit.net/ucv6hhc.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='lionheart-css' href='wp-content/themes/lionheart/dist/css/app.min8062.css?ver=1764940445'
-        type='text/css' media='all' />
-    <script type="text/javascript" src="wp-includes/js/jquery/jquery.minf43b.js?ver=3.7.1" id="jquery-core-js"></script>
-    <script type="pmdelayedscript" data-perfmatters-type="text/javascript" data-cfasync="false" data-no-optimize="1"
-        data-no-defer="1" data-no-minify="1">
-        /* <![CDATA[ */
-        const SlateAjax = {
-            "ajaxAdminUrl": "https://lionheart-education.com/wp-admin/admin-ajax.php",
-            "postId": "101",
-        };
-        /* ]]> */
-    </script>
 
-    <link rel="preconnect" href="https://use.typekit.net/" crossorigin>
-    <link rel="preconnect" href="https://p.typekit.net/" crossorigin>
-    <link rel='preload'
-        href='wp-content/uploads/2025/12/u2554752938_Expand_image_-chaos_20_-ar_32_-profile_f7odit3_030cbe68-e877-44b9-9a6d-652d7f8cea38_2-1-2560x1280.webp'
-        media='(min-width: 670px)' as='image' type='image/webp'>
-    <link rel='preload'
-        href='wp-content/uploads/2025/12/u2554752938_Expand_image_-chaos_20_-ar_32_-profile_f7odit3_030cbe68-e877-44b9-9a6d-652d7f8cea38_2-1-669x815.webp'
-        media='(max-width: 669px)' as='image' type='image/webp'>
+    <link rel='preconnect' href='https://use.typekit.net/' crossorigin>
+    <link rel='preconnect' href='https://p.typekit.net/' crossorigin>
+    <link rel='stylesheet' id='typekit-fonts-css' href='../use.typekit.net/ucv6hhc.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='lionheart-css' href='wp-content/themes/lionheart/dist/css/app.min8062.css?ver=1764940445' type='text/css' media='all' />
+
+    <script type="text/javascript" src="wp-includes/js/jquery/jquery.minf43b.js?ver=3.7.1" id="jquery-core-js"></script>
+
+    <link rel='preload' href='wp-content/uploads/2025/12/u2554752938_Expand_image_-chaos_20_-ar_32_-profile_f7odit3_030cbe68-e877-44b9-9a6d-652d7f8cea38_2-1-2560x1280.webp' media='(min-width: 670px)' as='image' type='image/webp'>
+    <link rel='preload' href='wp-content/uploads/2025/12/u2554752938_Expand_image_-chaos_20_-ar_32_-profile_f7odit3_030cbe68-e877-44b9-9a6d-652d7f8cea38_2-1-669x815.webp' media='(max-width: 669px)' as='image' type='image/webp'>
 </head>
 
-<body
-    class="home wp-singular page-template page-template-templates page-template-core page-template-templatescore-php page page-id-101 wp-theme-lionheart no-touch no-js">
+<body class="home page">
     <div class="page-wrap">
 
         <nav class='main-menu' data-menu='main' data-lenis-prevent>
             <ul id="menu-main" class="menu">
-                <li id="menu-item-1868"
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1868">
+                <li id="menu-item-1868" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1868">
                     <a href="#about">About</a>
                 </li>
-                <li id="menu-item-1869"
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1869">
+                <li id="menu-item-1869" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1869">
                     <a href="#projects">Projects</a>
                 </li>
-                <li id="menu-item-1870"
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1870">
+                <li id="menu-item-1870" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1870">
                     <a href="#skills">Skills</a>
                 </li>
-                <li id="menu-item-1871"
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1871">
+                <li id="menu-item-1871" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1871">
                     <a href="#work">Experience</a>
                 </li>
-                <li id="menu-item-902" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-902"><a
-                        href="#blog">Blog</a></li>
+                <li id="menu-item-902" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-902"><a href="#blog">Blog</a></li>
                 <li id="menu-item-1058" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1058">
                     <a href="#contact">Contact</a></li>
                 <li class="menu-item menu-item--btn bg-colorway-black">
-                    <span><a href='https://github.com/hulashc' target='_blank' class='btn--full btn btn--regular' role="button"><span
-                                class="btn__txt"><span class="btn__txt-inner" data-txt="View GitHub">View
-                                    GitHub</span></span></a></span>
+                    <span><a href='https://github.com/hulashc' target='_blank' class='btn--full btn btn--regular' role="button"><span class="btn__txt"><span class="btn__txt-inner" data-txt="View GitHub">View GitHub</span></span></a></span>
                 </li>
             </ul>
         </nav>
+
         <section class="overlay-modal" data-modal="search" data-lenis-prevent>
             <div class="overlay-modal__inner section section--large bg-colorway-black pv-small">
                 <header class="overlay-modal__header">
@@ -246,7 +135,6 @@
                         <input type="text" class="search-form__field" placeholder="Search" value="" name="s">
                     </form>
                 </header>
-
                 <div class="overlay-modal__content">
                     <div id="search-results"></div>
                 </div>
@@ -254,97 +142,67 @@
         </section>
 
         <header class="header">
-
             <div class="header__inner">
                 <div class="header__icons">
-                    <i class="header__icon header__icon--menu" role="button" aria-label="Menu"
-                        data-menu-target="main"></i>
-
-                    <i class="header__icon header__icon--search" role="button" aria-label="Search"
-                        data-modal-target="search"></i>
+                    <i class="header__icon header__icon--menu" role="button" aria-label="Menu" data-menu-target="main"></i>
+                    <i class="header__icon header__icon--search" role="button" aria-label="Search" data-modal-target="search"></i>
                 </div>
-
                 <div class="header__logo">
                     <a href="index.html" class="header__logo-link">
                         Hulash Chand </a>
                 </div>
-
                 <div class="header__btn">
-                    <a href='https://github.com/hulashc' target='_blank' class='btn--small btn' role="button"><span
-                            class="btn__txt"><span class="btn__txt-inner" data-txt="GitHub">GitHub</span></span></a> </div>
+                    <a href='https://github.com/hulashc' target='_blank' class='btn--small btn' role="button"><span class="btn__txt"><span class="btn__txt-inner" data-txt="GitHub">GitHub</span></span></a>
+                </div>
             </div>
-
         </header>
-
 
         <section id="banner-1" class="section-flagship-banner">
             <div class="flagship-banner" data-parallax>
                 <picture class="flagship-banner__img">
-                    <source
-                        srcset="https://lionheart-education.com/wp-content/uploads/2025/12/u2554752938_Expand_image_-chaos_20_-ar_32_-profile_f7odit3_030cbe68-e877-44b9-9a6d-652d7f8cea38_2-1-669x815.webp"
-                        media="(max-width: 669px)">
+                    <source srcset="https://lionheart-education.com/wp-content/uploads/2025/12/u2554752938_Expand_image_-chaos_20_-ar_32_-profile_f7odit3_030cbe68-e877-44b9-9a6d-652d7f8cea38_2-1-669x815.webp" media="(max-width: 669px)">
                     <img class="img-full" width='2560' height='1280'
                         src='wp-content/uploads/2025/12/u2554752938_Expand_image_-chaos_20_-ar_32_-profile_f7odit3_030cbe68-e877-44b9-9a6d-652d7f8cea38_2-1-2560x1280.webp'
-                        alt='Hulash Chand – Full-Stack Developer'> </picture>
-
-                <span class="flagship-banner__header-txt">
-                    Rochdale, UK </span>
-
+                        alt='Hulash Chand – Full-Stack Developer'>
+                </picture>
+                <span class="flagship-banner__header-txt">Rochdale, UK</span>
                 <div class="flagship-banner__content txt-colorway-light">
                     <h1 class="flagship-banner__title">
-                        <span data-fit-txt>
-                            Hulash Chand </span>
+                        <span data-fit-txt>Hulash Chand</span>
                     </h1>
                 </div>
-
                 <div class="flagship-banner__txt">
-                    <p class="flagship-banner__txt-col">
-                        Full-Stack<br />
-                        Developer </p>
-
-                    <p class="flagship-banner__txt-col">
-                        Data<br />
-                        Engineer </p>
+                    <p class="flagship-banner__txt-col">Full-Stack<br />Developer</p>
+                    <p class="flagship-banner__txt-col">Data<br />Engineer</p>
                 </div>
             </div>
         </section>
 
         <section id="about" class="section-text-content pv-large section-colorway-dark-beige">
-
             <div class="section section--medium">
                 <div class="content">
-                    <p style="text-align: center;"><span class="h5">I'm a full-stack developer and data engineer based in Rochdale, UK. I build web applications, data pipelines, and creative ML projects — with a focus on clean code, intuitive UX, and real-world impact.</span>
-                    </p>
-                    <p style="text-align: center;"><a href='https://github.com/hulashc' target='_blank'
-                            class='btn--outline btn btn--regular'><span class="btn__txt"><span class="btn__txt-inner"
-                                    data-txt="View My Work">View My Work</span></span></a>
+                    <p style="text-align: center;"><span class="h5">I'm a full-stack developer and data engineer based in Rochdale, UK. I build web applications, data pipelines, and creative ML projects — with a focus on clean code, intuitive UX, and real-world impact.</span></p>
+                    <p style="text-align: center;"><a href='https://github.com/hulashc' target='_blank' class='btn--outline btn btn--regular'><span class="btn__txt"><span class="btn__txt-inner" data-txt="View My Work">View My Work</span></span></a>
                 </div>
             </div>
-
         </section>
 
         <section id="section-2" class="section-text-over-image">
             <div class="content-over-img" data-parallax>
                 <picture class="content-over-img__img">
-                    <source
-                        srcset="https://lionheart-education.com/wp-content/uploads/2025/12/u2554752938_Abstract_blurred_image_out-of-focus_dreamy_backgr_1f6eb313-ebd6-433e-8305-d036317c3581_2-669x815.webp"
-                        media="(max-width: 669px)">
+                    <source srcset="https://lionheart-education.com/wp-content/uploads/2025/12/u2554752938_Abstract_blurred_image_out-of-focus_dreamy_backgr_1f6eb313-ebd6-433e-8305-d036317c3581_2-669x815.webp" media="(max-width: 669px)">
                     <img loading="lazy" class="img-full" width='2560' height='1280'
                         src='wp-content/uploads/2025/12/u2554752938_Abstract_blurred_image_out-of-focus_dreamy_backgr_1f6eb313-ebd6-433e-8305-d036317c3581_2-2560x1280.webp'
-                        alt=''> </picture>
-
+                        alt=''>
+                </picture>
                 <div class="content-over-img__inner txt-colorway-light">
                     <div class="content-over-img__top">
-                        <h2 class="txt-script">
-                            What I Do </h2>
-
+                        <h2 class="txt-script">What I Do</h2>
                         <div class="content-over-img__cols">
                             <div class="content-over-img__col content-over-img__col--primary content">
-                                <h3><span class="h2">Building modern web apps, intelligent pipelines and data-driven products<br />
-                                    </span></h3>
+                                <h3><span class="h2">Building modern web apps, intelligent pipelines and data-driven products<br /></span></h3>
                                 <p><span class="h6">From Next.js front-ends and Supabase backends to Python data engineering and ML experimentation — I bring ideas to life end-to-end.</span></p>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -354,64 +212,45 @@
         <section id="skills" class="section-link-cards bg-colorway-beige">
             <ul class="link-cards link-cards--tabs">
                 <li class="link-cards__item" data-reveal>
-                    <p class="link-cards__item-title" data-reveal-trigger>
-                        Front-End </p>
-
+                    <p class="link-cards__item-title" data-reveal-trigger>Front-End</p>
                     <div class="link-cards__item-body" data-reveal-hidden>
-                        <p class="link-cards__item-txt txt-tiny">
-                            Building responsive, performant web interfaces with Next.js, React, TypeScript and Tailwind CSS. Experienced with real-time data, animations, and component-driven architecture. </p>
-
+                        <p class="link-cards__item-txt txt-tiny">Building responsive, performant web interfaces with Next.js, React, TypeScript and Tailwind CSS. Experienced with real-time data, animations, and component-driven architecture.</p>
                         <div class="link-cards__item-link">
-                            <a href='https://github.com/hulashc' target='_blank' class='secondary-link secondary-link--full'><span
-                                    class='secondary-link__txt'>Explore</span></a> </div>
+                            <a href='https://github.com/hulashc' target='_blank' class='secondary-link secondary-link--full'><span class='secondary-link__txt'>Explore</span></a>
+                        </div>
                     </div>
                 </li>
                 <li class="link-cards__item" data-reveal>
-                    <p class="link-cards__item-title" data-reveal-trigger>
-                        Back-End &amp; Data </p>
-
+                    <p class="link-cards__item-title" data-reveal-trigger>Back-End &amp; Data</p>
                     <div class="link-cards__item-body" data-reveal-hidden>
-                        <p class="link-cards__item-txt txt-tiny">
-                            Designing and managing databases with Supabase and PostgreSQL, building data pipelines in Python and SQL, and creating REST APIs. Comfortable with ETL processes, data modelling, and backend logic.
-                        </p>
-
+                        <p class="link-cards__item-txt txt-tiny">Designing and managing databases with Supabase and PostgreSQL, building data pipelines in Python and SQL, and creating REST APIs. Comfortable with ETL processes, data modelling, and backend logic.</p>
                         <div class="link-cards__item-link">
-                            <a href='https://github.com/hulashc' target='_blank' class='secondary-link secondary-link--full'><span
-                                    class='secondary-link__txt'>Explore</span></a> </div>
+                            <a href='https://github.com/hulashc' target='_blank' class='secondary-link secondary-link--full'><span class='secondary-link__txt'>Explore</span></a>
+                        </div>
                     </div>
                 </li>
                 <li class="link-cards__item" data-reveal>
-                    <p class="link-cards__item-title" data-reveal-trigger>
-                        Machine Learning &amp; AI </p>
-
+                    <p class="link-cards__item-title" data-reveal-trigger>Machine Learning &amp; AI</p>
                     <div class="link-cards__item-body" data-reveal-hidden>
-                        <p class="link-cards__item-txt txt-tiny">
-                            Experimenting with and deploying creative ML and AI projects. Interested in practical applications of LLMs, image generation, financial prediction models, and AI-assisted tooling. </p>
-
+                        <p class="link-cards__item-txt txt-tiny">Experimenting with and deploying creative ML and AI projects. Interested in practical applications of LLMs, image generation, financial prediction models, and AI-assisted tooling.</p>
                         <div class="link-cards__item-link">
-                            <a href='https://github.com/hulashc' target='_blank'
-                                class='secondary-link secondary-link--full'><span
-                                    class='secondary-link__txt'>Explore</span></a> </div>
+                            <a href='https://github.com/hulashc' target='_blank' class='secondary-link secondary-link--full'><span class='secondary-link__txt'>Explore</span></a>
+                        </div>
                     </div>
                 </li>
                 <li class="link-cards__item" data-reveal>
-                    <p class="link-cards__item-title" data-reveal-trigger>
-                        Data Visualisation </p>
-
+                    <p class="link-cards__item-title" data-reveal-trigger>Data Visualisation</p>
                     <div class="link-cards__item-body" data-reveal-hidden>
-                        <p class="link-cards__item-txt txt-tiny">
-                            Creating rich, interactive dashboards and charts using Tableau, Plotly, and custom React components. Specialising in financial and sports data visualisation that tells a clear story. </p>
-
+                        <p class="link-cards__item-txt txt-tiny">Creating rich, interactive dashboards and charts using Tableau, Plotly, and custom React components. Specialising in financial and sports data visualisation that tells a clear story.</p>
                         <div class="link-cards__item-link">
-                            <a href='https://github.com/hulashc' target='_blank' class='secondary-link secondary-link--full'><span
-                                    class='secondary-link__txt'>Explore</span></a> </div>
+                            <a href='https://github.com/hulashc' target='_blank' class='secondary-link secondary-link--full'><span class='secondary-link__txt'>Explore</span></a>
+                        </div>
                     </div>
                 </li>
             </ul>
         </section>
 
         <section id="projects" class="section-image-with-text pv-large section-colorway-light-orange">
-
             <div class="section section--large">
                 <div class="img-w-txt img-w-txt--align-left">
                     <div class="img-w-txt__img">
@@ -420,109 +259,79 @@
                                 src='wp-content/uploads/2025/11/Lionheart-school-illustration.webp'
                                 alt='Sports Betting Platform Project'>
                         </div>
-
                         <div class="img-w-txt__secondary-img" data-parallax>
                             <img loading="lazy" class="img-full" width='312' height='312'
                                 src='wp-content/uploads/2025/11/u2554752938_Watercolour_illustration_of_a_bright_welcoming_an_d176c546-a8a4-4121-b395-a1cfa406dbbc_2-312x312.webp'
-                                alt='Data engineering and ML project'> </div>
+                                alt='Data engineering and ML project'>
+                        </div>
                     </div>
-
                     <div class="img-w-txt__txt">
                         <div class="img-w-txt__primary-txt content" data-animate="fade">
                             <h2><span class="txt-script h2">Featured Project</span></h2>
                             <h3>Sports Betting Platform</h3>
                             <p><span class="h6">A full-stack sports betting web application built with Next.js and Supabase, featuring real-time odds, user authentication, and live data integration.</span></p>
                             <p>Designed for performance and scalability, with a clean Tailwind CSS UI, Stripe payment integration, and a robust data pipeline feeding live match data.</p>
-                            <a href='https://github.com/hulashc' target='_blank' class='secondary-link'><span
-                                    class='secondary-link__txt'>View on GitHub</span></a>
+                            <a href='https://github.com/hulashc' target='_blank' class='secondary-link'><span class='secondary-link__txt'>View on GitHub</span></a>
                         </div>
-
                     </div>
                 </div>
             </div>
-
         </section>
 
         <section id="section-5" class="section-quote-slider pv-large section-colorway-white">
-
             <div class="hide-overflow">
                 <div class="section section--large" data-animate="fade">
-                    <div class="flickity flickity--quote" data-slider="quote"
-                        data-flickity="{&quot;autoPlay&quot;:4000}">
-
+                    <div class="flickity flickity--quote" data-slider="quote" data-flickity="{&quot;autoPlay&quot;:4000}">
                         <div class="flickity__item">
                             <blockquote class="flickity__item-quote">
                                 <p>"Hulash has a rare combination of technical depth and creative thinking. He builds things that actually work and look great."</p>
-
                                 <cite class="flickity__item-cite">
-
-                                    <span class="flickity__item-cite-name">
-                                        Colleague, Aston University </span>
+                                    <span class="flickity__item-cite-name">Colleague, Aston University</span>
                                 </cite>
                             </blockquote>
                         </div>
-
                         <div class="flickity__item">
                             <blockquote class="flickity__item-quote">
                                 <p>"A self-driven engineer who goes beyond the brief. Hulash consistently delivers clean, well-documented code and always thinks about the end user."</p>
-
                                 <cite class="flickity__item-cite">
-
-                                    <span class="flickity__item-cite-name">
-                                        Professional Reference </span>
+                                    <span class="flickity__item-cite-name">Professional Reference</span>
                                 </cite>
                             </blockquote>
                         </div>
-
                         <div class="flickity__item">
                             <blockquote class="flickity__item-quote">
                                 <p>"His ability to combine data engineering with front-end development makes him an incredibly versatile member of any team."</p>
-
                                 <cite class="flickity__item-cite">
-
-                                    <span class="flickity__item-cite-name">
-                                        LinkedIn Recommendation </span>
+                                    <span class="flickity__item-cite-name">LinkedIn Recommendation</span>
                                 </cite>
                             </blockquote>
                         </div>
-
                     </div>
                 </div>
             </div>
-
         </section>
 
         <section id="work" class="section-quote-over-image-slider">
             <div class="flickity flickity--full" data-slider="full" data-parallax>
 
-                <div class="flickity__item"
-                    data-pager-img="wp-content/uploads/2025/10/Screenshot-2025-10-17-at-13.45.55-150x150.webp">
+                <div class="flickity__item" data-pager-img="wp-content/uploads/2025/10/Screenshot-2025-10-17-at-13.45.55-150x150.webp">
                     <div class="content-over-img">
                         <picture class="content-over-img__img">
-                            <source
-                                srcset="https://lionheart-education.com/wp-content/uploads/2025/10/Screenshot-2025-10-17-at-13.45.55-669x815.webp"
-                                media="(max-width: 669px)">
+                            <source srcset="https://lionheart-education.com/wp-content/uploads/2025/10/Screenshot-2025-10-17-at-13.45.55-669x815.webp" media="(max-width: 669px)">
                             <img loading="lazy" class="img-full" width='2560' height='1280'
                                 src='wp-content/uploads/2025/10/Screenshot-2025-10-17-at-13.45.55-2560x1280.webp'
-                                alt='Sports Betting Platform'> </picture>
-
+                                alt='Sports Betting Platform'>
+                        </picture>
                         <div class="content-over-img__inner txt-colorway-light">
                             <div class="content-over-img__top">
-                                <p class="txt-script">
-                                    Projects &amp; Work… </p>
+                                <p class="txt-script">Projects &amp; Work…</p>
                             </div>
-
                             <div class="content-over-img__bottom">
                                 <blockquote class="content-over-img__quote">
                                     <p>"Sports Betting Platform — A real-time Next.js app with live odds, Supabase authentication, and Stripe payments. Built for scale and performance."</p>
-
                                     <cite class="content-over-img__quote-cite">
-
-                                        <span class="content-over-img__quote-name">
-                                            Sports Betting App </span>
-
-                                        <span class="content-over-img__quote-role">
-                                            Next.js · Supabase · Tailwind CSS </span>
+                                        <span class="content-over-img__quote-name">Sports Betting App</span>
+                                        <span class="content-over-img__quote-role">Next.js · Supabase · Tailwind CSS</span>
                                     </cite>
                                 </blockquote>
                             </div>
@@ -530,34 +339,24 @@
                     </div>
                 </div>
 
-                <div class="flickity__item"
-                    data-pager-img="wp-content/uploads/2025/12/Screenshot-2025-12-03-at-19.00.23-150x150.webp">
+                <div class="flickity__item" data-pager-img="wp-content/uploads/2025/12/Screenshot-2025-12-03-at-19.00.23-150x150.webp">
                     <div class="content-over-img">
                         <picture class="content-over-img__img">
-                            <source
-                                srcset="https://lionheart-education.com/wp-content/uploads/2025/12/Screenshot-2025-12-03-at-19.00.23-669x815.webp"
-                                media="(max-width: 669px)">
+                            <source srcset="https://lionheart-education.com/wp-content/uploads/2025/12/Screenshot-2025-12-03-at-19.00.23-669x815.webp" media="(max-width: 669px)">
                             <img loading="lazy" class="img-full" width='2560' height='1280'
                                 src='wp-content/uploads/2025/12/Screenshot-2025-12-03-at-19.00.23-2560x1280.webp'
-                                alt='Portfolio Website'> </picture>
-
+                                alt='Portfolio Website'>
+                        </picture>
                         <div class="content-over-img__inner txt-colorway-light">
                             <div class="content-over-img__top">
-                                <p class="txt-script">
-                                    Projects &amp; Work... </p>
+                                <p class="txt-script">Projects &amp; Work...</p>
                             </div>
-
                             <div class="content-over-img__bottom">
                                 <blockquote class="content-over-img__quote">
                                     <p>"Portfolio Website — This site, built on a custom HTML/CSS/JS theme, showcasing projects, skills, and experience in a clean, modern layout."</p>
-
                                     <cite class="content-over-img__quote-cite">
-
-                                        <span class="content-over-img__quote-name">
-                                            Portfolio Site </span>
-
-                                        <span class="content-over-img__quote-role">
-                                            HTML · CSS · JavaScript </span>
+                                        <span class="content-over-img__quote-name">Portfolio Site</span>
+                                        <span class="content-over-img__quote-role">HTML · CSS · JavaScript</span>
                                     </cite>
                                 </blockquote>
                             </div>
@@ -565,34 +364,24 @@
                     </div>
                 </div>
 
-                <div class="flickity__item"
-                    data-pager-img="wp-content/uploads/2025/12/Screenshot-2025-12-04-at-14.23.12-150x150.webp">
+                <div class="flickity__item" data-pager-img="wp-content/uploads/2025/12/Screenshot-2025-12-04-at-14.23.12-150x150.webp">
                     <div class="content-over-img">
                         <picture class="content-over-img__img">
-                            <source
-                                srcset="https://lionheart-education.com/wp-content/uploads/2025/12/Screenshot-2025-12-04-at-14.23.12-669x815.webp"
-                                media="(max-width: 669px)">
+                            <source srcset="https://lionheart-education.com/wp-content/uploads/2025/12/Screenshot-2025-12-04-at-14.23.12-669x815.webp" media="(max-width: 669px)">
                             <img loading="lazy" class="img-full" width='2560' height='1280'
                                 src='wp-content/uploads/2025/12/Screenshot-2025-12-04-at-14.23.12-2560x1280.webp'
-                                alt='ML and AI Projects'> </picture>
-
+                                alt='ML and AI Projects'>
+                        </picture>
                         <div class="content-over-img__inner txt-colorway-light">
                             <div class="content-over-img__top">
-                                <p class="txt-script">
-                                    Projects &amp; Work... </p>
+                                <p class="txt-script">Projects &amp; Work...</p>
                             </div>
-
                             <div class="content-over-img__bottom">
                                 <blockquote class="content-over-img__quote">
                                     <p>"Creative ML Projects — Experiments with image generation, financial prediction models, and LLM-powered tools, built in Python and deployed via modern pipelines."</p>
-
                                     <cite class="content-over-img__quote-cite">
-
-                                        <span class="content-over-img__quote-name">
-                                            ML &amp; AI </span>
-
-                                        <span class="content-over-img__quote-role">
-                                            Python · TensorFlow · HuggingFace </span>
+                                        <span class="content-over-img__quote-name">ML &amp; AI</span>
+                                        <span class="content-over-img__quote-role">Python · TensorFlow · HuggingFace</span>
                                     </cite>
                                 </blockquote>
                             </div>
@@ -600,40 +389,31 @@
                     </div>
                 </div>
 
-                <div class="flickity__item"
-                    data-pager-img="wp-content/uploads/2025/12/Screenshot-2025-12-04-at-14.37.19-150x150.webp">
+                <div class="flickity__item" data-pager-img="wp-content/uploads/2025/12/Screenshot-2025-12-04-at-14.37.19-150x150.webp">
                     <div class="content-over-img">
                         <picture class="content-over-img__img">
-                            <source
-                                srcset="https://lionheart-education.com/wp-content/uploads/2025/12/Screenshot-2025-12-04-at-14.37.19-669x815.webp"
-                                media="(max-width: 669px)">
+                            <source srcset="https://lionheart-education.com/wp-content/uploads/2025/12/Screenshot-2025-12-04-at-14.37.19-669x815.webp" media="(max-width: 669px)">
                             <img loading="lazy" class="img-full" width='2560' height='1280'
                                 src='wp-content/uploads/2025/12/Screenshot-2025-12-04-at-14.37.19-2560x1280.webp'
-                                alt='Data Visualisation Dashboards'> </picture>
-
+                                alt='Data Visualisation Dashboards'>
+                        </picture>
                         <div class="content-over-img__inner txt-colorway-light">
                             <div class="content-over-img__top">
-                                <p class="txt-script">
-                                    Projects &amp; Work... </p>
+                                <p class="txt-script">Projects &amp; Work...</p>
                             </div>
-
                             <div class="content-over-img__bottom">
                                 <blockquote class="content-over-img__quote">
                                     <p>"Financial Data Dashboards — Interactive Tableau and React-based visualisations of financial markets and sports data, designed for clarity and insight."</p>
-
                                     <cite class="content-over-img__quote-cite">
-
-                                        <span class="content-over-img__quote-name">
-                                            Data Visualisation </span>
-
-                                        <span class="content-over-img__quote-role">
-                                            Tableau · Plotly · React </span>
+                                        <span class="content-over-img__quote-name">Data Visualisation</span>
+                                        <span class="content-over-img__quote-role">Tableau · Plotly · React</span>
                                     </cite>
                                 </blockquote>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -644,19 +424,17 @@
                         <div class="form-alt__img-inner">
                             <img loading="lazy" class="img-full" width='669' height='815'
                                 src='wp-content/uploads/2025/11/u2554752938_candid_moment_of_two_young_children_laughing_and__def35665-48c7-4ba6-a276-91e9b2b8a5c3_1-669x815.webp'
-                                alt='Get in touch'> </div>
+                                alt='Get in touch'>
+                        </div>
                     </div>
-
                     <div class="form-alt__main pv-large">
                         <div class="form-alt__main-txt content">
                             <h2><span class="txt-script h2">Get In Touch</span></h2>
                             <h3><span class="h1">Let's build something great together</span></h3>
                         </div>
-
                         <div class="form-alt__main-txt-small">
                             <p class="txt-small">I'm open to full-time roles, freelance projects, and interesting collaborations. Whether you have a project in mind or just want to connect, feel free to reach out.</p>
                         </div>
-
                         <div class="form-alt__main-form">
                             <p><a href="mailto:hulash@example.com" class="btn btn--regular btn--outline"><span class="btn__txt"><span class="btn__txt-inner" data-txt="Email Me">Email Me</span></span></a></p>
                         </div>
@@ -666,254 +444,151 @@
         </section>
 
         <section id="blog" class="section-article-slider pv-large section-colorway-beige">
-
             <div class="section section--small mb-medium">
                 <div class="txt-center content">
                     <h2><span class="txt-script h2">Writing &amp; Notes</span></h2>
                     <h3>Thoughts on development, data, and building things</h3>
                 </div>
             </div>
-
             <div class="hide-overflow">
                 <div class="section section--large" data-animate="fade">
                     <div class="flickity flickity--column flickity--column-large" data-slider="column">
                         <div class="flickity__item">
-
                             <article class="article bg-colorway-light-orange" style="--highlight-color: #fcd0b1;">
-
                                 <div class="meta-bar">
-                                    <div class="meta-bar__reading-time">
-                                        <span>4</span> <span>min</span> </div>
-
-                                    <div class="meta-bar__date">
-                                        March 2026 </div>
+                                    <div class="meta-bar__reading-time"><span>4</span> <span>min</span></div>
+                                    <div class="meta-bar__date">March 2026</div>
                                 </div>
-
                                 <div class="article__content">
                                     <div class="article__term">
-                                        <a href='#'
-                                            class='btn--outline btn--tiny btn'><span class="btn__txt"><span
-                                                    class="btn__txt-inner"
-                                                    data-txt="Next.js">Next.js</span></span></a> </div>
-
-                                    <p class="article__title">
-                                        <a href="#">
-                                            Building a real-time sports betting platform with Next.js and Supabase </a>
-                                    </p>
-
-                                    <div class="article__link">
-                                        <a href='#'
-                                            class='secondary-link'><span class='secondary-link__txt'>Read
-                                                More</span></a> </div>
+                                        <a href='#' class='btn--outline btn--tiny btn'><span class="btn__txt"><span class="btn__txt-inner" data-txt="Next.js">Next.js</span></span></a>
+                                    </div>
+                                    <p class="article__title"><a href="#">Building a real-time sports betting platform with Next.js and Supabase</a></p>
+                                    <div class="article__link"><a href='#' class='secondary-link'><span class='secondary-link__txt'>Read More</span></a></div>
                                 </div>
                             </article>
                         </div>
                         <div class="flickity__item">
-
-                            <article class="article bg-colorway-light-orange" style="">
-
+                            <article class="article bg-colorway-light-orange">
                                 <div class="meta-bar">
-                                    <div class="meta-bar__reading-time">
-                                        <span>5</span> <span>min</span> </div>
-
-                                    <div class="meta-bar__date">
-                                        February 2026 </div>
+                                    <div class="meta-bar__reading-time"><span>5</span> <span>min</span></div>
+                                    <div class="meta-bar__date">February 2026</div>
                                 </div>
-
                                 <div class="article__content">
                                     <div class="article__term">
-                                        <a href='#'
-                                            class='btn--outline btn--tiny btn'><span class="btn__txt"><span
-                                                    class="btn__txt-inner"
-                                                    data-txt="Python">Python</span></span></a> </div>
-
-                                    <p class="article__title">
-                                        <a href="#">
-                                            Getting started with data pipelines in Python: ETL patterns for small teams </a>
-                                    </p>
-
-                                    <div class="article__link">
-                                        <a href='#' class='secondary-link'><span
-                                                class='secondary-link__txt'>Read More</span></a> </div>
+                                        <a href='#' class='btn--outline btn--tiny btn'><span class="btn__txt"><span class="btn__txt-inner" data-txt="Python">Python</span></span></a>
+                                    </div>
+                                    <p class="article__title"><a href="#">Getting started with data pipelines in Python: ETL patterns for small teams</a></p>
+                                    <div class="article__link"><a href='#' class='secondary-link'><span class='secondary-link__txt'>Read More</span></a></div>
                                 </div>
                             </article>
                         </div>
                         <div class="flickity__item">
-
                             <article class="article bg-colorway-light-orange" style="--highlight-color: #f8f3ec;">
-
                                 <div class="meta-bar">
-                                    <div class="meta-bar__reading-time">
-                                        <span>5</span> <span>min</span> </div>
-
-                                    <div class="meta-bar__date">
-                                        January 2026 </div>
+                                    <div class="meta-bar__reading-time"><span>5</span> <span>min</span></div>
+                                    <div class="meta-bar__date">January 2026</div>
                                 </div>
-
                                 <div class="article__content">
                                     <div class="article__term">
-                                        <a href='#'
-                                            class='btn--outline btn--tiny btn'><span class="btn__txt"><span
-                                                    class="btn__txt-inner" data-txt="AI &amp; ML">AI &amp; ML</span></span></a> </div>
-
-                                    <p class="article__title">
-                                        <a href="#">
-                                            Practical LLM integrations: what actually works in production apps
-                                        </a>
-                                    </p>
-
-                                    <div class="article__link">
-                                        <a href='#'
-                                            class='secondary-link'><span class='secondary-link__txt'>Read
-                                                More</span></a> </div>
+                                        <a href='#' class='btn--outline btn--tiny btn'><span class="btn__txt"><span class="btn__txt-inner" data-txt="AI &amp; ML">AI &amp; ML</span></span></a>
+                                    </div>
+                                    <p class="article__title"><a href="#">Practical LLM integrations: what actually works in production apps</a></p>
+                                    <div class="article__link"><a href='#' class='secondary-link'><span class='secondary-link__txt'>Read More</span></a></div>
                                 </div>
                             </article>
                         </div>
                         <div class="flickity__item">
-
-                            <article class="article bg-colorway-light-orange" style="">
-
+                            <article class="article bg-colorway-light-orange">
                                 <div class="meta-bar">
-                                    <div class="meta-bar__reading-time">
-                                        <span>4</span> <span>min</span> </div>
-
-                                    <div class="meta-bar__date">
-                                        December 2025 </div>
+                                    <div class="meta-bar__reading-time"><span>4</span> <span>min</span></div>
+                                    <div class="meta-bar__date">December 2025</div>
                                 </div>
-
                                 <div class="article__content">
                                     <div class="article__term">
-                                        <a href='#'
-                                            class='btn--outline btn--tiny btn'><span class="btn__txt"><span
-                                                    class="btn__txt-inner" data-txt="Career">Career</span></span></a> </div>
-
-                                    <p class="article__title">
-                                        <a href="#">
-                                            From developer to engineering lead: what I've learned so far </a>
-                                    </p>
-
-                                    <div class="article__link">
-                                        <a href='#'
-                                            class='secondary-link'><span class='secondary-link__txt'>Read
-                                                More</span></a> </div>
+                                        <a href='#' class='btn--outline btn--tiny btn'><span class="btn__txt"><span class="btn__txt-inner" data-txt="Career">Career</span></span></a>
+                                    </div>
+                                    <p class="article__title"><a href="#">From developer to engineering lead: what I've learned so far</a></p>
+                                    <div class="article__link"><a href='#' class='secondary-link'><span class='secondary-link__txt'>Read More</span></a></div>
                                 </div>
                             </article>
                         </div>
                         <div class="flickity__item">
-
                             <article class="article bg-colorway-light-orange" style="--highlight-color: #d6cdc1;">
-
                                 <div class="meta-bar">
-                                    <div class="meta-bar__reading-time">
-                                        <span>6</span> <span>min</span> </div>
-
-                                    <div class="meta-bar__date">
-                                        November 2025 </div>
+                                    <div class="meta-bar__reading-time"><span>6</span> <span>min</span></div>
+                                    <div class="meta-bar__date">November 2025</div>
                                 </div>
-
                                 <div class="article__content">
                                     <div class="article__term">
-                                        <a href='#'
-                                            class='btn--outline btn--tiny btn'><span class="btn__txt"><span
-                                                    class="btn__txt-inner"
-                                                    data-txt="Tableau">Tableau</span></span></a> </div>
-
-                                    <p class="article__title">
-                                        <a href="#">
-                                            Visualising financial markets: tips for building dashboards that actually inform decisions </a>
-                                    </p>
-
-                                    <div class="article__link">
-                                        <a href='#'
-                                            class='secondary-link'><span class='secondary-link__txt'>Read
-                                                More</span></a> </div>
+                                        <a href='#' class='btn--outline btn--tiny btn'><span class="btn__txt"><span class="btn__txt-inner" data-txt="Tableau">Tableau</span></span></a>
+                                    </div>
+                                    <p class="article__title"><a href="#">Visualising financial markets: tips for building dashboards that actually inform decisions</a></p>
+                                    <div class="article__link"><a href='#' class='secondary-link'><span class='secondary-link__txt'>Read More</span></a></div>
                                 </div>
                             </article>
                         </div>
                     </div>
                 </div>
             </div>
-
-
             <div class="section section--small mt-small">
                 <div class="txt-center content">
-                    <a href='https://github.com/hulashc' target='_blank' class='btn--outline btn btn--regular'><span
-                            class="btn__txt"><span class="btn__txt-inner" data-txt="All Posts">All
-                                Posts</span></span></a>
+                    <a href='https://github.com/hulashc' target='_blank' class='btn--outline btn btn--regular'><span class="btn__txt"><span class="btn__txt-inner" data-txt="All Posts">All Posts</span></span></a>
                 </div>
             </div>
         </section>
 
         <section id="section-9" class="section-image-links">
             <ul class="img-links" style="--count: 4;">
-
                 <li class="img-links__item active" data-img-link>
                     <a class="img-links__item-link" href='https://github.com/hulashc' target='_blank'>
                         <picture>
-                            <source
-                                srcset="https://lionheart-education.com/wp-content/uploads/2025/11/u2554752938_A_tutor_and_a_student_sit_by_the_window_of_a_luxuri_48728427-c697-4fc7-816e-af8c5a94d04b-669x380.webp"
-                                media="(max-width: 669px)">
+                            <source srcset="https://lionheart-education.com/wp-content/uploads/2025/11/u2554752938_A_tutor_and_a_student_sit_by_the_window_of_a_luxuri_48728427-c697-4fc7-816e-af8c5a94d04b-669x380.webp" media="(max-width: 669px)">
                             <img loading="lazy" class="img-full" width='1280' height='1699'
                                 src='wp-content/uploads/2025/11/u2554752938_A_tutor_and_a_student_sit_by_the_window_of_a_luxuri_48728427-c697-4fc7-816e-af8c5a94d04b-1280x1699.webp'
-                                alt='Next.js Projects'> </picture>
-
+                                alt='Next.js Projects'>
+                        </picture>
                         <div class="img-links__item-title">
-                            <p class="img-links__item-title-txt">
-                                Next.js </p>
+                            <p class="img-links__item-title-txt">Next.js</p>
                         </div>
                     </a>
                 </li>
-
-                <li class="img-links__item " data-img-link>
+                <li class="img-links__item" data-img-link>
                     <a class="img-links__item-link" href='https://github.com/hulashc' target='_blank'>
                         <picture>
-                            <source
-                                srcset="https://lionheart-education.com/wp-content/uploads/2025/10/u2554752938_Happy_teenagers_-chaos_10_-ar_34_-sref_httpss._9a86beae-573e-400f-a8e0-d81c7aa6a175_0-669x380.webp"
-                                media="(max-width: 669px)">
+                            <source srcset="https://lionheart-education.com/wp-content/uploads/2025/10/u2554752938_Happy_teenagers_-chaos_10_-ar_34_-sref_httpss._9a86beae-573e-400f-a8e0-d81c7aa6a175_0-669x380.webp" media="(max-width: 669px)">
                             <img loading="lazy" class="img-full" width='1280' height='1699'
                                 src='wp-content/uploads/2025/10/u2554752938_Happy_teenagers_-chaos_10_-ar_34_-sref_httpss._9a86beae-573e-400f-a8e0-d81c7aa6a175_0.webp'
                                 alt='Python &amp; Data Engineering'>
                         </picture>
-
                         <div class="img-links__item-title">
-                            <p class="img-links__item-title-txt">
-                                Python </p>
+                            <p class="img-links__item-title-txt">Python</p>
                         </div>
                     </a>
                 </li>
-
-                <li class="img-links__item " data-img-link>
+                <li class="img-links__item" data-img-link>
                     <a class="img-links__item-link" href='https://github.com/hulashc' target='_blank'>
                         <picture>
-                            <source
-                                srcset="https://lionheart-education.com/wp-content/uploads/2025/10/mattheweva_56578_dynamic_angle_The_pristine_entrance_of_an_eleg_057a44b1-f513-4206-8768-90d9075799f7-669x380.webp"
-                                media="(max-width: 669px)">
+                            <source srcset="https://lionheart-education.com/wp-content/uploads/2025/10/mattheweva_56578_dynamic_angle_The_pristine_entrance_of_an_eleg_057a44b1-f513-4206-8768-90d9075799f7-669x380.webp" media="(max-width: 669px)">
                             <img loading="lazy" class="img-full" width='1280' height='1280'
                                 src='wp-content/uploads/2025/10/mattheweva_56578_dynamic_angle_The_pristine_entrance_of_an_eleg_057a44b1-f513-4206-8768-90d9075799f7.webp'
                                 alt='Machine Learning &amp; AI'>
                         </picture>
-
                         <div class="img-links__item-title">
-                            <p class="img-links__item-title-txt">
-                                ML &amp; AI </p>
+                            <p class="img-links__item-title-txt">ML &amp; AI</p>
                         </div>
                     </a>
                 </li>
-
-                <li class="img-links__item " data-img-link>
+                <li class="img-links__item" data-img-link>
                     <a class="img-links__item-link" href='https://github.com/hulashc' target='_blank'>
                         <picture>
-                            <source
-                                srcset="https://lionheart-education.com/wp-content/uploads/2025/11/u2554752938_candid_moment_of_two_young_children_laughing_and__a5662579-f20d-491c-8887-ccf1401704dd_2-669x380.webp"
-                                media="(max-width: 669px)">
+                            <source srcset="https://lionheart-education.com/wp-content/uploads/2025/11/u2554752938_candid_moment_of_two_young_children_laughing_and__a5662579-f20d-491c-8887-ccf1401704dd_2-669x380.webp" media="(max-width: 669px)">
                             <img loading="lazy" class="img-full" width='1280' height='1699'
                                 src='wp-content/uploads/2025/11/u2554752938_candid_moment_of_two_young_children_laughing_and__a5662579-f20d-491c-8887-ccf1401704dd_2.webp'
                                 alt='Data Visualisation'>
                         </picture>
-
                         <div class="img-links__item-title">
-                            <p class="img-links__item-title-txt">
-                                Tableau </p>
+                            <p class="img-links__item-title-txt">Tableau</p>
                         </div>
                     </a>
                 </li>
@@ -924,47 +599,36 @@
             <div class="section-inset">
                 <div class="content-over-slim-img" data-parallax>
                     <picture class="content-over-slim-img__img">
-                        <source
-                            srcset="https://lionheart-education.com/wp-content/uploads/2025/11/Black-cover-669x815.webp"
-                            media="(max-width: 669px)">
+                        <source srcset="https://lionheart-education.com/wp-content/uploads/2025/11/Black-cover-669x815.webp" media="(max-width: 669px)">
                         <img loading="lazy" class="img-full" width='2560' height='1280'
                             src='wp-content/uploads/2025/11/Black-cover-2560x1280.webp' alt='Dark background'>
                     </picture>
-
                     <div class="content-over-slim-img__inner txt-colorway-light">
                         <div class="content-over-slim__content section section--small pv-medium">
                             <div class="content-over-slim-img__txt txt-center content">
                                 <h2><span class="txt-script" style="color: #ffffff;">My Approach</span></h2>
                                 <hr />
-                                <h3><span class="h1" style="color: #ffffff;">Good software <em><span
-                                                style="color: #f5d2b5;">solves real problems</span></em> — built with <em><span
-                                                style="color: #f5d2b5;">care</span> <span
-                                                style="color: #f5d2b5;">and clarity</span></em>.<br />
-                                    </span></h3>
+                                <h3><span class="h1" style="color: #ffffff;">Good software <em><span style="color: #f5d2b5;">solves real problems</span></em> — built with <em><span style="color: #f5d2b5;">care</span> <span style="color: #f5d2b5;">and clarity</span></em>.<br /></span></h3>
                                 <p>&nbsp;</p>
-                                <p><span style="color: #ffffff;"><a href='https://github.com/hulashc' target='_blank'
-                                            class='btn--outline btn btn--regular'><span class="btn__txt"><span
-                                                    class="btn__txt-inner" data-txt="My GitHub">My
-                                                    GitHub</span></span></a></span></p>
+                                <p><span style="color: #ffffff;"><a href='https://github.com/hulashc' target='_blank' class='btn--outline btn btn--regular'><span class="btn__txt"><span class="btn__txt-inner" data-txt="My GitHub">My GitHub</span></span></a></span></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <div class='sticky-cta-btn' data-sticky-cta-btn><a href='#contact'
-                class='btn--large btn--sticky btn' role="button"><span class="btn__txt"><span class="btn__txt-inner"
-                        data-txt="Hire Me">Hire Me</span></span></a></div>
+
+        <div class='sticky-cta-btn' data-sticky-cta-btn>
+            <a href='#contact' class='btn--large btn--sticky btn' role="button"><span class="btn__txt"><span class="btn__txt-inner" data-txt="Hire Me">Hire Me</span></span></a>
+        </div>
 
         <section id="footer-1" class="section-call-to-action bg-colorway-beige">
             <div class="cta">
                 <div class="cta__inner section section--large pv-small">
-
                     <div class="cta__content">
                         <div class="cta__txt content">
                             <p><span class="h5">Available for new opportunities — let's connect.</span></p>
                         </div>
-
                         <div class="cta__form">
                             <p><a href="mailto:hulash@example.com" class="btn btn--regular"><span class="btn__txt"><span class="btn__txt-inner" data-txt="Get In Touch">Get In Touch</span></span></a></p>
                         </div>
@@ -973,27 +637,18 @@
             </div>
         </section>
 
-
-
         <footer class="footer">
             <div class="footer__section footer__section--main pv-small bg-colorway-black">
                 <div class="footer__section-inner">
                     <div class="footer__btns">
-                        <a href='https://github.com/hulashc' target='_blank' class='btn--outline btn btn--regular'><span
-                                class="btn__txt"><span class="btn__txt-inner" data-txt="GitHub">GitHub</span></span></a>
-                        <a href='https://www.linkedin.com/in/hulash-chand' target='_blank' class='btn--outline btn btn--regular'><span
-                                class="btn__txt"><span class="btn__txt-inner" data-txt="LinkedIn">LinkedIn</span></span></a>
-                        <a href='mailto:hulash@example.com' class='btn--outline btn btn--regular'><span
-                                class="btn__txt"><span class="btn__txt-inner" data-txt="Email Me">Email Me</span></span></a>
+                        <a href='https://github.com/hulashc' target='_blank' class='btn--outline btn btn--regular'><span class="btn__txt"><span class="btn__txt-inner" data-txt="GitHub">GitHub</span></span></a>
+                        <a href='https://www.linkedin.com/in/hulash-chand' target='_blank' class='btn--outline btn btn--regular'><span class="btn__txt"><span class="btn__txt-inner" data-txt="LinkedIn">LinkedIn</span></span></a>
+                        <a href='mailto:hulash@example.com' class='btn--outline btn btn--regular'><span class="btn__txt"><span class="btn__txt-inner" data-txt="Email Me">Email Me</span></span></a>
                     </div>
-
                     <div class="footer__cols">
                         <div class="footer__cols-menus">
                             <div class="footer__cols-menu">
-                                <p class="footer__cols-menu-title h6" data-toggle-target="footer-menu-0"
-                                    data-toggle-max="1024">
-                                    Skills </p>
-
+                                <p class="footer__cols-menu-title h6" data-toggle-target="footer-menu-0" data-toggle-max="1024">Skills</p>
                                 <div class="footer__cols-menu-items" data-toggle="footer-menu-0">
                                     <ul id="menu-services" class="menu">
                                         <li class="menu-item"><a href="#skills">Front-End Development</a></li>
@@ -1005,10 +660,7 @@
                                 </div>
                             </div>
                             <div class="footer__cols-menu">
-                                <p class="footer__cols-menu-title h6" data-toggle-target="footer-menu-1"
-                                    data-toggle-max="1024">
-                                    Navigation </p>
-
+                                <p class="footer__cols-menu-title h6" data-toggle-target="footer-menu-1" data-toggle-max="1024">Navigation</p>
                                 <div class="footer__cols-menu-items" data-toggle="footer-menu-1">
                                     <ul id="menu-main-1" class="menu">
                                         <li class="menu-item"><a href="#about">About</a></li>
@@ -1021,65 +673,33 @@
                                 </div>
                             </div>
                             <div class="footer__cols-menu">
-                                <p class="footer__cols-menu-title h6" data-toggle-target="footer-menu-3"
-                                    data-toggle-max="1024">
-                                    Connect </p>
-
+                                <p class="footer__cols-menu-title h6" data-toggle-target="footer-menu-3" data-toggle-max="1024">Connect</p>
                                 <div class="footer__cols-menu-items" data-toggle="footer-menu-3">
                                     <ul id="menu-connect" class="menu">
-                                        <li class="menu-item">
-                                            <a target="_blank"
-                                                href="https://www.linkedin.com/in/hulash-chand">LinkedIn</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a target="_blank"
-                                                href="https://github.com/hulashc">GitHub</a></li>
+                                        <li class="menu-item"><a target="_blank" href="https://www.linkedin.com/in/hulash-chand">LinkedIn</a></li>
+                                        <li class="menu-item"><a target="_blank" href="https://github.com/hulashc">GitHub</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="footer__meta">
-                        <p class="footer__meta-copyright">
-                            &copy; 2026 Hulash Chand. All rights reserved. </p>
+                        <p class="footer__meta-copyright">&copy; 2026 Hulash Chand. All rights reserved.</p>
                     </div>
                 </div>
             </div>
-
             <div class="footer__section footer__section--strapline bg-colorway-black">
                 <div class="footer__section-inner">
                     <p class="footer__strapline">
-                        <span data-fit-txt>
-                            Build things that matter </span>
+                        <span data-fit-txt>Build things that matter</span>
                     </p>
                 </div>
             </div>
-
         </footer>
-
-        <style>
-        </style>
 
     </div>
     <!--end .page-wrap-->
 
-    <script type="speculationrules">
-        {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/lionheart/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
-</script>
-    <script type="text/javascript" src="wp-content/plugins/honeypot/includes/js/wpa0187.js?ver=2.3.04"
-        id="wpascript-js"></script>
-    <script type="text/javascript" id="wpascript-js-after">
-        /* <![CDATA[ */
-        wpa_field_info = {
-            "wpa_field_name": "bakfce1479",
-            "wpa_field_value": 299023,
-            "wpa_add_test": "no"
-        }
-        //# sourceURL=wpascript-js-after
-        /* ]]> */
-    </script>
-    <script type="text/javascript" src="wp-content/themes/lionheart/dist/js/app.min4584.js?ver=1764167254"
-        id="lionheart-js" defer="defer" data-wp-strategy="defer"></script>
+    <script type="text/javascript" src="wp-content/themes/lionheart/dist/js/app.min4584.js?ver=1764167254" id="lionheart-js" defer="defer"></script>
 </body>
 </html>
