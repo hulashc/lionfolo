@@ -85,23 +85,17 @@
     </style>
 
     <style>
-        /* Allow scrolling but hide scrollbar visuals */
-
         html,
         body {
             overflow-y: auto;
-            /* scrolling ON */
             overflow-x: hidden;
-            /* no horizontal scroll */
         }
 
-        /* Chrome, Edge, Safari */
         ::-webkit-scrollbar {
             width: 0;
             height: 0;
         }
 
-        /* Firefox */
         html {
             scrollbar-width: none;
         }
@@ -147,6 +141,213 @@
         }
     </style>
 
+    <!-- Project Cards styles -->
+    <style>
+        /* ── Section wrapper ── */
+        .projects-section {
+            background: #0d0d0f;
+            padding: 80px 24px 100px;
+        }
+
+        .projects-section__heading {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .projects-section__heading .txt-script {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* ── Controls: Grid/Index + A-Z/Date ── */
+        .projects-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto 32px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .projects-controls__group {
+            display: flex;
+            gap: 16px;
+        }
+
+        .projects-controls button {
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            color: rgba(255,255,255,0.4);
+            cursor: pointer;
+            padding: 0;
+            transition: color 0.2s ease;
+        }
+
+        .projects-controls button:hover,
+        .projects-controls button.active {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        /* ── Grid view ── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 960px) {
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 600px) {
+            .projects-grid { grid-template-columns: 1fr; }
+            .projects-controls { justify-content: center; }
+        }
+
+        /* ── Individual card ── */
+        .project-card {
+            display: block;
+            text-decoration: none;
+            color: #e8e6e1;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .project-card__img-wrap {
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            background: #1a1a1a;
+            margin-bottom: 14px;
+        }
+
+        .project-card__img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.55s cubic-bezier(0.215, 0.61, 0.355, 1),
+                        opacity 0.4s ease;
+        }
+
+        .project-card:hover .project-card__img-wrap img {
+            transform: scale(1.04);
+        }
+
+        .project-card__title {
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.4;
+            margin-bottom: 4px;
+            transition: color 0.2s ease;
+        }
+
+        .project-card:hover .project-card__title {
+            color: #f5d2b5;
+        }
+
+        .project-card__sub {
+            font-size: 13px;
+            font-weight: 300;
+            opacity: 0.45;
+            letter-spacing: 0.01em;
+        }
+
+        /* ── List (Index) view ── */
+        .projects-list {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: none;
+            position: relative;
+        }
+
+        .project-list-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            text-decoration: none;
+            color: rgba(255,255,255,0.55);
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 0.01em;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .project-list-item::before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #e8e6e1;
+            margin-right: 0;
+            transition: width 0.35s cubic-bezier(0.075, 0.82, 0.165, 1),
+                        margin-right 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
+            flex-shrink: 0;
+            align-self: center;
+        }
+
+        .project-list-item:hover::before {
+            width: 24px;
+            margin-right: 14px;
+        }
+
+        .project-list-item:hover {
+            color: #fff;
+        }
+
+        .project-list-item__name {
+            flex: 1;
+        }
+
+        .project-list-item__sub {
+            font-size: 14px;
+            opacity: 0.4;
+            font-weight: 300;
+        }
+
+        /* Hover preview image for list mode */
+        .projects-list__preview {
+            display: none;
+            position: fixed;
+            pointer-events: none;
+            z-index: 999;
+            width: 360px;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+            transition: opacity 0.2s ease;
+            opacity: 0;
+        }
+
+        /* ── Hidden states ── */
+        .projects-grid.hidden,
+        .projects-list.hidden {
+            display: none !important;
+        }
+
+        .projects-list:not(.hidden) {
+            display: block;
+        }
+
+        @media (max-width: 760px) {
+            .projects-list__preview { display: none !important; }
+            .project-list-item { font-size: 15px; }
+            .project-list-item__sub { display: none; }
+        }
+    </style>
+
 </head>
 
 <body class="home page">
@@ -158,7 +359,7 @@
                     <a href="#about">About</a>
                 </li>
                 <li id="menu-item-1869" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1869">
-                    <a href="https://hulashc.github.io/hulash-portfolio/">Projects</a>
+                    <a href="#projects">Projects</a>
                 </li>
                 <li id="menu-item-1870" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1870">
                     <a href="#skills">Skills</a>
@@ -329,37 +530,135 @@
             </ul>
         </section>
 
-        <section id="projects" class="section-image-with-text pv-large section-colorway-pastel-turquoise">
-            <div class="section section--large">
-                <div class="img-w-txt img-w-txt--align-left">
-                    <div class="img-w-txt__img">
-                        <div class="img-w-txt__primary-img">
-                            <img loading="lazy" class="img-full" width='669' height='815'
-                                src='wp-content/uploads/2025/11/Lionheart-school-illustration.webp'
-                                alt='Sports Betting Platform Project'>
-                        </div>
-                        <div class="img-w-txt__secondary-img" data-parallax>
-                            <img loading="lazy" class="img-full" width='312' height='312'
-                                src='wp-content/uploads/2025/11/u2554752938_Watercolour_illustration_of_a_bright_welcoming_an_d176c546-a8a4-4121-b395-a1cfa406dbbc_2-312x312.webp'
-                                alt='Data engineering and ML project'>
-                        </div>
-                    </div>
-                    <div class="img-w-txt__txt">
-                        <div class="img-w-txt__primary-txt content" data-animate="fade">
-                            <h2><span class="txt-script h2">Featured Project</span></h2>
-                            <h3>Sports Betting Platform</h3>
-                            <p><span class="h6">A full-stack sports betting web application built with Next.js and
-                                    Supabase, featuring real-time odds, user authentication, and live data
-                                    integration.</span></p>
-                            <p>Designed for performance and scalability, with a clean Tailwind CSS UI, Stripe payment
-                                integration, and a robust data pipeline feeding live match data.</p>
-                            <a href='https://hulashc.github.io/hulash-portfolio/' class='secondary-link'><span
-                                    class='secondary-link__txt'>View All Projects</span></a>
-                        </div>
-                    </div>
+        <!-- ═══════════════════════════════════════════
+             PROJECTS SECTION — native cards grid
+        ════════════════════════════════════════════ -->
+        <section id="projects" class="projects-section">
+
+            <div class="projects-section__heading">
+                <span class="txt-script h2" style="color:#f5d2b5;">Selected Work</span>
+                <h2 style="color:#e8e6e1; margin-top:8px;">Projects</h2>
+            </div>
+
+            <!-- Controls -->
+            <div class="projects-controls">
+                <div class="projects-controls__group">
+                    <button id="btn-grid" class="active" onclick="setView('grid')">Grid</button>
+                    <button id="btn-list" onclick="setView('list')">Index</button>
+                </div>
+                <div class="projects-controls__group">
+                    <button id="btn-date" class="active" onclick="setSort('date')">2026–2024</button>
+                    <button id="btn-az" onclick="setSort('az')">A–Z</button>
                 </div>
             </div>
+
+            <!-- Grid view -->
+            <div class="projects-grid" id="projects-grid">
+
+                <a class="project-card" href="https://hulashc.github.io/hulash-portfolio/projects/celestian-labs/"
+                    data-name="Celestian Labs" data-sub="Agentic Artificial Intelligence" data-date="20260214"
+                    data-img="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/celestian-labs-AAI/celestian-labs-0.png"
+                    target="_blank">
+                    <div class="project-card__img-wrap">
+                        <img src="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/celestian-labs-AAI/celestian-labs-0.png"
+                            alt="Celestian Labs – Agentic AI" loading="lazy">
+                    </div>
+                    <p class="project-card__title">Celestian Labs</p>
+                    <p class="project-card__sub">Agentic Artificial Intelligence</p>
+                </a>
+
+                <a class="project-card" href="https://hulashc.github.io/hulash-portfolio/projects/system-design-architecture/"
+                    data-name="System Design Architecture" data-sub="Architecture" data-date="20251113"
+                    data-img="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/system-design/system-design-0.png"
+                    target="_blank">
+                    <div class="project-card__img-wrap">
+                        <img src="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/system-design/system-design-0.png"
+                            alt="System Design Architecture" loading="lazy">
+                    </div>
+                    <p class="project-card__title">System Design</p>
+                    <p class="project-card__sub">Architecture</p>
+                </a>
+
+                <a class="project-card" href="https://hulashc.github.io/hulash-portfolio/projects/birdsong-mathematical-model/"
+                    data-name="Bird Song Mathematical Model" data-sub="Mathematical Model" data-date="20251113"
+                    data-img="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/bird-song/bird-song-0.png"
+                    target="_blank">
+                    <div class="project-card__img-wrap">
+                        <img src="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/bird-song/bird-song-0.png"
+                            alt="Bird Song Mathematical Model" loading="lazy">
+                    </div>
+                    <p class="project-card__title">Bird Song</p>
+                    <p class="project-card__sub">Mathematical Model</p>
+                </a>
+
+                <a class="project-card" href="https://hulashc.github.io/hulash-portfolio/projects/leetjourney-obsidian-notes/"
+                    data-name="Leet Journey" data-sub="Obsidian Notes" data-date="20241121"
+                    data-img="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/leet-journey/leet-journey-0.png"
+                    target="_blank">
+                    <div class="project-card__img-wrap">
+                        <img src="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/leet-journey/leet-journey-0.png"
+                            alt="Leet Journey – Obsidian Notes" loading="lazy">
+                    </div>
+                    <p class="project-card__title">Leet Journey</p>
+                    <p class="project-card__sub">Obsidian Notes</p>
+                </a>
+
+                <a class="project-card" href="https://hulashc.github.io/hulash-portfolio/projects/bhagavad-gita-telugu/"
+                    data-name="Bhagavad Gita Telugu" data-sub="Telugu" data-date="20251121"
+                    data-img="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/bagvadh-gita-telugu/bagvadh-gita.png"
+                    target="_blank">
+                    <div class="project-card__img-wrap">
+                        <img src="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/bagvadh-gita-telugu/bagvadh-gita.png"
+                            alt="Bhagavad Gita Telugu" loading="lazy">
+                    </div>
+                    <p class="project-card__title">Bhagavad Gita</p>
+                    <p class="project-card__sub">Telugu</p>
+                </a>
+
+            </div>
+
+            <!-- List (Index) view -->
+            <div class="projects-list hidden" id="projects-list">
+                <img class="projects-list__preview" id="list-preview" src="" alt="">
+
+                <a class="project-list-item" href="https://hulashc.github.io/hulash-portfolio/projects/celestian-labs/"
+                    data-img="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/celestian-labs-AAI/celestian-labs-0.png"
+                    data-date="20260214" data-name="Celestian Labs" target="_blank">
+                    <span class="project-list-item__name">Celestian Labs</span>
+                    <span class="project-list-item__sub">Agentic Artificial Intelligence</span>
+                </a>
+
+                <a class="project-list-item" href="https://hulashc.github.io/hulash-portfolio/projects/system-design-architecture/"
+                    data-img="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/system-design/system-design-0.png"
+                    data-date="20251113" data-name="System Design Architecture" target="_blank">
+                    <span class="project-list-item__name">System Design Architecture</span>
+                    <span class="project-list-item__sub">Architecture</span>
+                </a>
+
+                <a class="project-list-item" href="https://hulashc.github.io/hulash-portfolio/projects/birdsong-mathematical-model/"
+                    data-img="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/bird-song/bird-song-0.png"
+                    data-date="20251113" data-name="Bird Song Mathematical Model" target="_blank">
+                    <span class="project-list-item__name">Bird Song Mathematical Model</span>
+                    <span class="project-list-item__sub">Mathematical Model</span>
+                </a>
+
+                <a class="project-list-item" href="https://hulashc.github.io/hulash-portfolio/projects/leetjourney-obsidian-notes/"
+                    data-img="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/leet-journey/leet-journey-0.png"
+                    data-date="20241121" data-name="Leet Journey" target="_blank">
+                    <span class="project-list-item__name">Leet Journey</span>
+                    <span class="project-list-item__sub">Obsidian Notes</span>
+                </a>
+
+                <a class="project-list-item" href="https://hulashc.github.io/hulash-portfolio/projects/bhagavad-gita-telugu/"
+                    data-img="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/bagvadh-gita-telugu/bagvadh-gita.png"
+                    data-date="20251121" data-name="Bhagavad Gita Telugu" target="_blank">
+                    <span class="project-list-item__name">Bhagavad Gita Telugu</span>
+                    <span class="project-list-item__sub">Telugu</span>
+                </a>
+            </div>
+
         </section>
+        <!-- ═══════════════════════ end projects ═══════════════════════ -->
 
         <section id="section-5" class="section-quote-slider pv-large section-colorway-white">
             <div class="hide-overflow">
@@ -818,7 +1117,7 @@
                                 <div class="footer__cols-menu-items" data-toggle="footer-menu-1">
                                     <ul id="menu-main-1" class="menu">
                                         <li class="menu-item"><a href="#about">About</a></li>
-                                        <li class="menu-item"><a href="https://hulashc.github.io/hulash-portfolio/">Projects</a></li>
+                                        <li class="menu-item"><a href="#projects">Projects</a></li>
                                         <li class="menu-item"><a href="#skills">Skills</a></li>
                                         <li class="menu-item"><a href="#work">Experience</a></li>
                                         <li class="menu-item"><a href="#blog">Blog</a></li>
@@ -859,6 +1158,78 @@
 
     <script type="text/javascript" src="wp-content/themes/lionheart/dist/js/app.min4584.js?ver=1764167254"
         id="lionheart-js" defer="defer"></script>
+
+    <!-- Project cards: Grid/List toggle + Sort + List hover preview -->
+    <script>
+        var currentView = 'grid';
+        var currentSort = 'date';
+
+        function setView(v) {
+            currentView = v;
+            var grid = document.getElementById('projects-grid');
+            var list = document.getElementById('projects-list');
+            if (v === 'grid') {
+                grid.classList.remove('hidden');
+                list.classList.add('hidden');
+            } else {
+                grid.classList.add('hidden');
+                list.classList.remove('hidden');
+            }
+            document.getElementById('btn-grid').classList.toggle('active', v === 'grid');
+            document.getElementById('btn-list').classList.toggle('active', v === 'list');
+            applySort();
+        }
+
+        function setSort(s) {
+            currentSort = s;
+            document.getElementById('btn-date').classList.toggle('active', s === 'date');
+            document.getElementById('btn-az').classList.toggle('active', s === 'az');
+            applySort();
+        }
+
+        function applySort() {
+            var container = currentView === 'grid'
+                ? document.getElementById('projects-grid')
+                : document.getElementById('projects-list');
+            var selector = currentView === 'grid' ? '.project-card' : '.project-list-item';
+            var items = Array.from(container.querySelectorAll(selector));
+            items.sort(function(a, b) {
+                if (currentSort === 'date') {
+                    return parseInt(b.dataset.date) - parseInt(a.dataset.date);
+                } else {
+                    return a.dataset.name.localeCompare(b.dataset.name);
+                }
+            });
+            items.forEach(function(el) { container.appendChild(el); });
+        }
+
+        // List view hover preview image
+        var preview = document.getElementById('list-preview');
+        document.querySelectorAll('.project-list-item').forEach(function(item) {
+            item.addEventListener('mouseenter', function(e) {
+                preview.src = this.dataset.img;
+                preview.style.display = 'block';
+                preview.style.opacity = '1';
+                movePreview(e);
+            });
+            item.addEventListener('mousemove', movePreview);
+            item.addEventListener('mouseleave', function() {
+                preview.style.opacity = '0';
+                setTimeout(function() {
+                    if (preview.style.opacity === '0') preview.style.display = 'none';
+                }, 200);
+            });
+        });
+
+        function movePreview(e) {
+            var x = e.clientX + 24;
+            var y = e.clientY - 80;
+            if (x + 360 > window.innerWidth) x = e.clientX - 384;
+            preview.style.left = x + 'px';
+            preview.style.top = y + 'px';
+        }
+    </script>
+
 </body>
 
 </html>
