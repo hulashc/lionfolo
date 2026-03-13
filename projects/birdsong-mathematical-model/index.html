@@ -1,142 +1,125 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Bird Song Mathematical Model | Hulash Chand</title>
-    <meta name="description" content="Bird Song Mathematical Model by Hulash Chand.">
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/hulashc/hulash-portfolio/main/content/logo.png">
-    <link rel='preconnect' href='https://use.typekit.net/' crossorigin>
-    <link rel='stylesheet' href='../../wp-content/themes/lionheart/dist/css/app.min8062.css?ver=1764940445' type='text/css' media='all' />
-    <style>
-        @font-face { font-family: 'Chor'; src: url('../../wp-content/fonts/chor.woff2') format('woff2'); font-weight: normal; font-style: normal; font-display: swap; }
-        .header__logo-link { font-family: 'Chor', sans-serif !important; }
-        html, body { overflow-x: hidden; }
-        ::-webkit-scrollbar { width: 0; height: 0; }
-        html { scrollbar-width: none; }
-        .project-page { background: #0d0d0f; min-height: 100vh; padding-bottom: 80px; }
-        .project-hero { width: 100%; max-height: 70vh; overflow: hidden; }
-        .project-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .project-body { max-width: 900px; margin: 0 auto; padding: 64px 24px 0; color: #e8e6e1; }
-        .project-eyebrow { font-size: 13px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #f5d2b5; margin-bottom: 16px; }
-        .project-title { font-size: clamp(32px, 5vw, 56px); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: #e8e6e1; margin-bottom: 40px; }
-        .project-desc { font-size: 18px; font-weight: 300; line-height: 1.75; color: rgba(232,230,225,0.75); margin-bottom: 48px; max-width: 680px; }
-        .project-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 56px; }
-        .project-tag { font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.55); }
-        .project-divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 56px 0; }
-        .project-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 48px; margin-bottom: 56px; }
-        @media (max-width: 600px) { .project-detail-grid { grid-template-columns: 1fr; } }
-        .project-detail-label { font-size: 11px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #f5d2b5; margin-bottom: 8px; }
-        .project-detail-value { font-size: 16px; font-weight: 300; color: rgba(232,230,225,0.8); line-height: 1.6; }
-        .project-back { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; margin-bottom: 64px; transition: color 0.2s ease; }
-        .project-back:hover { color: #fff; }
-        .project-back::before { content: '←'; }
-        .manifold-block { background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%); padding: 56px 64px; margin-bottom: 4px; }
-        @media (max-width: 600px) { .manifold-block { padding: 40px 24px; } }
-        .manifold-block h3 { font-size: 22px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; margin-bottom: 28px; border-left: 3px solid #00ffcc; padding-left: 18px; }
-        .manifold-block ul { list-style: none; padding: 0; margin: 0; }
-        .manifold-block ul li { font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.72); margin-bottom: 14px; padding-left: 22px; position: relative; }
-        .manifold-block ul li::before { content: '→'; position: absolute; left: 0; color: #00ffcc; font-weight: 600; }
-        .manifold-block strong { color: #00ffcc; }
-        .tech-block { background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%); padding: 56px 64px; margin-bottom: 4px; }
-        @media (max-width: 600px) { .tech-block { padding: 40px 24px; } }
-        .tech-block h3 { font-size: 22px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; margin-bottom: 28px; border-left: 3px solid #ff6a00; padding-left: 18px; }
-        .tech-section { margin-bottom: 28px; }
-        .tech-section h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; }
-        .tech-section p { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.72); padding-left: 16px; margin: 0; }
-        .live-demo { width: 100%; min-height: 520px; border: none; display: block; background: #050508; }
-    </style>
+	<title>Hulash Chand &raquo; Bird Song Mathematical Model</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Bird Song Mathematical Model – an interactive 3D spatiotemporal acoustic manifold by Hulash Chand.">
+	<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/hulashc/hulash-portfolio/main/content/logo.png">
+	<link rel='stylesheet' href='https://hulashc.github.io/hulash-portfolio/styles.css' type='text/css' media='all' />
+	<script src="https://hulashc.github.io/hulash-portfolio/jquery-3.6.0.mind4d0.js"></script>
+	<script src="https://hulashc.github.io/hulash-portfolio/jquery.bez.mind4d0.js"></script>
+	<script src="https://hulashc.github.io/hulash-portfolio/jquery.easing.1.3d4d0.js"></script>
+	<script src="https://hulashc.github.io/hulash-portfolio/app.min8a54.js"></script>
+	<script>
+		projects = [
+			[1, "20260214", "Hulash Chand", "Celestian Labs", "/lionfolo/projects/celestian-labs/", "Celestian Labs Agentic Artificial Intelligence"],
+			[2, "20251113", "Hulash Chand", "System Design Architecture", "/lionfolo/projects/system-design-architecture/", "System Design Architecture"],
+			[3, "20251113", "Hulash Chand", "Bird Song Mathematical Model", "/lionfolo/projects/birdsong-mathematical-model/", "Bird Song Mathematical Model"],
+			[4, "20241121", "Hulash Chand", "Leet Journey", "/lionfolo/projects/leetjourney-obsidian-notes/", "Leet Journey Obsidian Notes"],
+			[5, "20251121", "Hulash Chand", "Bhagavad Gita Telugu", "/lionfolo/projects/bhagavad-gita-telugu/", "Bhagavad Gita Telugu"]
+		];
+		document.querySelector(':root').style.setProperty('--background', '#f2a7a7');
+		document.querySelector(':root').style.setProperty('--mono', '#f2a7a7');
+	</script>
 </head>
-<body class="page">
-<div class="page-wrap">
+<body class="project init">
 
-    <header class="header">
-        <div class="header__inner">
-            <div class="header__icons">
-                <i class="header__icon header__icon--menu" role="button" aria-label="Menu" data-menu-target="main"></i>
-            </div>
-            <div class="header__logo">
-                <a href="../../index.html#projects" class="header__logo-link">Hulash Chand</a>
-            </div>
-            <div class="header__btn">
-                <a href="../../index.html#projects" class="btn--small btn"><span class="btn__txt"><span class="btn__txt-inner" data-txt="All Projects">All Projects</span></span></a>
-            </div>
-        </div>
-    </header>
+	<header>
+		<a href="../../index.html#projects">Hulash Chand</a>
+		<ul class="index js-index">
+			<li>
+				<a href="#" class="js-grid">Grid</a>
+				<a href="#" class="js-list">Index</a>
+			</li>
+			<li>
+				<a href="#" class="js-sort-alpha">A-Z</a>
+				<a href="#" class="js-sort-date">2026–2024</a>
+			</li>
+		</ul>
+		<ul class="nav">
+			<li><a href="../../index.html#about">Info</a></li>
+			<li><a href="../../index.html#projects">Close</a></li>
+		</ul>
+		<a href="#" class="color js-theme"></a>
+	</header>
 
-    <nav class='main-menu' data-menu='main' data-lenis-prevent>
-        <ul class="menu">
-            <li class="menu-item"><a href="../../index.html#about">About</a></li>
-            <li class="menu-item"><a href="../../index.html#projects">Projects</a></li>
-            <li class="menu-item"><a href="../../index.html#skills">Skills</a></li>
-            <li class="menu-item"><a href="../../index.html#work">Experience</a></li>
-            <li class="menu-item"><a href="../../index.html#blog">Blog</a></li>
-            <li class="menu-item"><a href="../../index.html#contact">Contact</a></li>
-            <li class="menu-item menu-item--btn bg-colorway-black">
-                <span><a href='https://github.com/hulashc' target='_blank' class='btn--full btn btn--regular'><span class="btn__txt"><span class="btn__txt-inner" data-txt="View GitHub">View GitHub</span></span></a></span>
-            </li>
-        </ul>
-    </nav>
+	<main>
+		<section id="project" data-color="#f2a7a7" data-id="3">
 
-    <div class="project-page">
-        <div class="project-hero">
-            <img src="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/bird-song/bird-song-0.png" alt="Bird Song Mathematical Model">
-        </div>
-        <div class="project-body">
-            <a href="../../index.html#projects" class="project-back">← Back to Projects</a>
-            <p class="project-eyebrow">Mathematical Model</p>
-            <h1 class="project-title">Bird Song</h1>
-            <p class="project-desc">A mathematical model visualised as an interactive 3D web experience — exploring the patterns and structures within birdsong compositions. Inspired by Lucio Arese's <em>"Visualizing Bird Songs: A Mathematical Model"</em>.</p>
-            <div class="project-tags">
-                <span class="project-tag">Three.js</span>
-                <span class="project-tag">Python</span>
-                <span class="project-tag">librosa</span>
-                <span class="project-tag">PCA</span>
-                <span class="project-tag">WebGL</span>
-                <span class="project-tag">Mathematical Model</span>
-            </div>
-        </div>
+			<div id="project-slides">
 
-        <iframe class="live-demo" src="https://hulashc.github.io/birdsong" title="Bird Song – Live Demo" loading="lazy" allow="autoplay"></iframe>
+				<div class="large">
+					<div>
+						<video muted loop playsinline autoplay preload="metadata">
+							<source src="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/bird-song/bird-song-1.mp4" type="video/mp4">
+							<img src="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/bird-song/bird-song-0.png" sizes="100vw" alt="Bird Song">
+						</video>
+					</div>
+				</div>
 
-        <div class="project-body">
-            <hr class="project-divider">
-            <div class="manifold-block">
-                <h3>Spatiotemporal Acoustic Manifold</h3>
-                <ul>
-                    <li>Birdsong treated as a <strong>trajectory through 3D space</strong> rather than just a waveform</li>
-                    <li>Each point encodes the <strong>timbre</strong> (tone colour) as high-dimensional MFCC features</li>
-                    <li>PCA compresses features into <strong>PC1, PC2, PC3</strong> (X, Y, Z axes)</li>
-                    <li><strong>Loops, twists, clusters</strong> reveal phrases, motifs, and tonal vs noisy sections</li>
-                    <li>Inspired by Lucio Arese's <em>"Visualizing Bird Songs: A Mathematical Model"</em></li>
-                </ul>
-            </div>
-            <div class="tech-block">
-                <h3>Technical Implementation</h3>
-                <div class="tech-section">
-                    <h4 style="color:#ff6a00;">Feature Extraction · Python + librosa</h4>
-                    <p>40 MFCCs + chroma + spectral centroid/bandwidth + rolloff + zero-crossing rate per frame. Features standardised and reduced to 3D with PCA. Frame-aligned time and energy exported to JSON.</p>
-                </div>
-                <div class="tech-section">
-                    <h4 style="color:#00ffcc;">3D Manifold · Three.js + WebGL</h4>
-                    <p>Points smoothed with Catmull–Rom spline to create a continuous ribbon path. Moving dot synced to audio.currentTime → frame index. Dot size and colour map to energy (silence → blue, peak calls → orange).</p>
-                </div>
-                <div class="tech-section">
-                    <h4 style="color:#3a6fff;">Visual Design</h4>
-                    <p>Fading comet tail shows last 280 frames without cluttering the full path. Ghost trajectory reveals global shape at low opacity. Axes labelled as PC1 / PC2 / PC3 to emphasise the mathematical model.</p>
-                </div>
-            </div>
-            <hr class="project-divider">
-            <div class="project-detail-grid">
-                <div><p class="project-detail-label">Year</p><p class="project-detail-value">2025</p></div>
-                <div><p class="project-detail-label">Category</p><p class="project-detail-value">Mathematical Model</p></div>
-                <div><p class="project-detail-label">Stack</p><p class="project-detail-value">Python · librosa · Three.js · WebGL</p></div>
-                <div><p class="project-detail-label">Inspiration</p><p class="project-detail-value">Lucio Arese, Spatiotemporal Acoustics</p></div>
-            </div>
-        </div>
-    </div>
+				<div class="large">
+					<div>
+						<a href="https://hulashc.github.io/birdsong" class="project-link" target="_blank" rel="noopener">
+							<iframe src="https://hulashc.github.io/birdsong" title="Spatiotemporal Acoustic Manifold"
+								loading="lazy" allow="autoplay" style="width:100%;height:100%;min-height:480px;border:none;display:block;background:#050508;pointer-events:all;"></iframe>
+						</a>
+					</div>
+				</div>
 
-</div>
-<script src="../../wp-content/themes/lionheart/dist/js/app.min4584.js?ver=1764167254" defer></script>
+				<div class="large">
+					<div style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:60px 80px;background:linear-gradient(135deg,#0a0e27 0%,#1a1f3a 100%);height:100%;min-height:480px;">
+						<h3 style="font-size:28px;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:#fff;margin-bottom:32px;border-left:3px solid #00ffcc;padding-left:20px;">Spatiotemporal Acoustic Manifold</h3>
+						<ul style="list-style:none;padding:0;margin:0;font-size:15px;line-height:1.9;color:rgba(255,255,255,0.75);max-width:700px;">
+							<li style="margin-bottom:18px;padding-left:24px;position:relative;"><span style="position:absolute;left:0;top:0;color:#00ffcc;font-weight:600;">&#8594;</span>Birdsong treated as a <strong style="color:#00ffcc">trajectory through 3D space</strong> rather than just a waveform.</li>
+							<li style="margin-bottom:18px;padding-left:24px;position:relative;"><span style="position:absolute;left:0;top:0;color:#00ffcc;font-weight:600;">&#8594;</span>Each point encodes the <strong style="color:#00ffcc">timbre</strong> as high-dimensional MFCC features.</li>
+							<li style="margin-bottom:18px;padding-left:24px;position:relative;"><span style="position:absolute;left:0;top:0;color:#00ffcc;font-weight:600;">&#8594;</span>PCA compresses features into <strong style="color:#00ffcc">PC1, PC2, PC3</strong> (X, Y, Z axes).</li>
+							<li style="margin-bottom:18px;padding-left:24px;position:relative;"><span style="position:absolute;left:0;top:0;color:#00ffcc;font-weight:600;">&#8594;</span><strong style="color:#00ffcc">Loops, twists, clusters</strong> reveal phrases, motifs, and tonal vs noisy sections.</li>
+							<li style="padding-left:24px;position:relative;"><span style="position:absolute;left:0;top:0;color:#00ffcc;font-weight:600;">&#8594;</span>Inspired by Lucio Arese’s <em>"Visualizing Bird Songs: A Mathematical Model"</em>.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="large">
+					<div style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:60px 80px;background:linear-gradient(135deg,#1a1f3a 0%,#0a0e27 100%);height:100%;min-height:480px;">
+						<h3 style="font-size:28px;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:#fff;margin-bottom:32px;border-left:3px solid #ff6a00;padding-left:20px;">Technical Implementation</h3>
+						<div style="font-size:14px;line-height:1.8;color:rgba(255,255,255,0.75);max-width:700px;">
+							<div style="margin-bottom:28px;">
+								<h4 style="font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#ff6a00;margin-bottom:10px;">Feature Extraction &middot; Python + librosa</h4>
+								<p style="margin:0;padding-left:16px;">40 MFCCs + chroma + spectral centroid/bandwidth + rolloff + zero-crossing rate per frame. Features standardised and reduced to 3D with PCA. Frame-aligned time and energy exported to JSON.</p>
+							</div>
+							<div style="margin-bottom:28px;">
+								<h4 style="font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#00ffcc;margin-bottom:10px;">3D Manifold &middot; Three.js + WebGL</h4>
+								<p style="margin:0;padding-left:16px;">Points smoothed with Catmull–Rom spline to create a continuous ribbon path. Moving dot synced to audio.currentTime &rarr; frame index. Dot size and colour map to energy.</p>
+							</div>
+							<div>
+								<h4 style="font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#3a6fff;margin-bottom:10px;">Visual Design</h4>
+								<p style="margin:0;padding-left:16px;">Fading comet tail shows last 280 frames. Ghost trajectory reveals global shape at low opacity. Axes labelled PC1 / PC2 / PC3.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div id="project-info">
+				<h2>
+					<span>Bird Song</span>
+					<span>Mathematical Model</span>
+				</h2>
+				<div id="project-info-details" class="more">
+					<a href="#"><span>Project Details</span></a>
+					<p>A mathematical model visualised as an interactive 3D web experience — exploring the patterns and structures within birdsong compositions. Inspired by Lucio Arese’s <em>"Visualizing Bird Songs: A Mathematical Model"</em>.</p>
+				</div>
+				<div id="project-info-counter">
+					<span>1</span><span>/4</span>
+					<span class="next"></span>
+				</div>
+			</div>
+
+		</section>
+	</main>
+
+	<footer></footer>
 </body>
 </html>
