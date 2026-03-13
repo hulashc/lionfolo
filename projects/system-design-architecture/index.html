@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>System Design Architecture | Hulash Chand</title>
+    <meta name="description" content="System Design Architecture – scalable system design patterns and diagrams by Hulash Chand.">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/hulashc/hulash-portfolio/main/content/logo.png">
+    <link rel='preconnect' href='https://use.typekit.net/' crossorigin>
+    <link rel='stylesheet' href='../../wp-content/themes/lionheart/dist/css/app.min8062.css?ver=1764940445' type='text/css' media='all' />
+    <style>
+        @font-face {
+            font-family: 'Chor';
+            src: url('../../wp-content/fonts/chor.woff2') format('woff2');
+            font-weight: normal; font-style: normal; font-display: swap;
+        }
+        .header__logo-link { font-family: 'Chor', sans-serif !important; }
+        html, body { overflow-x: hidden; }
+        ::-webkit-scrollbar { width: 0; height: 0; }
+        html { scrollbar-width: none; }
+        .project-page { background: #0d0d0f; min-height: 100vh; padding-bottom: 80px; }
+        .project-hero { width: 100%; max-height: 70vh; overflow: hidden; }
+        .project-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .project-body { max-width: 900px; margin: 0 auto; padding: 64px 24px 0; color: #e8e6e1; }
+        .project-eyebrow { font-size: 13px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #f5d2b5; margin-bottom: 16px; }
+        .project-title { font-size: clamp(32px, 5vw, 56px); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: #e8e6e1; margin-bottom: 40px; }
+        .project-desc { font-size: 18px; font-weight: 300; line-height: 1.75; color: rgba(232,230,225,0.75); margin-bottom: 48px; max-width: 680px; }
+        .project-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 56px; }
+        .project-tag { font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.55); }
+        .project-divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 56px 0; }
+        .project-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 48px; margin-bottom: 56px; }
+        @media (max-width: 600px) { .project-detail-grid { grid-template-columns: 1fr; } }
+        .project-detail-label { font-size: 11px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #f5d2b5; margin-bottom: 8px; }
+        .project-detail-value { font-size: 16px; font-weight: 300; color: rgba(232,230,225,0.8); line-height: 1.6; }
+        .project-back { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; margin-bottom: 64px; transition: color 0.2s ease; }
+        .project-back:hover { color: #fff; }
+        .project-back::before { content: '←'; }
+        .project-slide { width: 100%; margin-bottom: 4px; }
+        .project-slide img { width: 100%; display: block; object-fit: cover; }
+    </style>
+</head>
+<body class="page">
+<div class="page-wrap">
+
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__icons">
+                <i class="header__icon header__icon--menu" role="button" aria-label="Menu" data-menu-target="main"></i>
+            </div>
+            <div class="header__logo">
+                <a href="../../index.html" class="header__logo-link">Hulash Chand</a>
+            </div>
+            <div class="header__btn">
+                <a href="../../index.html#projects" class="btn--small btn"><span class="btn__txt"><span class="btn__txt-inner" data-txt="All Projects">All Projects</span></span></a>
+            </div>
+        </div>
+    </header>
+
+    <nav class='main-menu' data-menu='main' data-lenis-prevent>
+        <ul class="menu">
+            <li class="menu-item"><a href="../../index.html#about">About</a></li>
+            <li class="menu-item"><a href="../../index.html#projects">Projects</a></li>
+            <li class="menu-item"><a href="../../index.html#skills">Skills</a></li>
+            <li class="menu-item"><a href="../../index.html#work">Experience</a></li>
+            <li class="menu-item"><a href="../../index.html#blog">Blog</a></li>
+            <li class="menu-item"><a href="../../index.html#contact">Contact</a></li>
+            <li class="menu-item menu-item--btn bg-colorway-black">
+                <span><a href='https://github.com/hulashc' target='_blank' class='btn--full btn btn--regular'><span class="btn__txt"><span class="btn__txt-inner" data-txt="View GitHub">View GitHub</span></span></a></span>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="project-page">
+
+        <div class="project-hero">
+            <img src="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/system-design/system-design-0.png" alt="System Design Architecture">
+        </div>
+
+        <div class="project-body">
+            <a href="../../index.html#projects" class="project-back">Back to Projects</a>
+
+            <p class="project-eyebrow">Architecture</p>
+            <h1 class="project-title">System Design Architecture</h1>
+            <p class="project-desc">Scalable system design patterns, diagrams, and architectural decisions for real-world distributed systems. Covers microservices, event-driven architecture, database sharding, caching strategies, and more.</p>
+
+            <div class="project-tags">
+                <span class="project-tag">Distributed Systems</span>
+                <span class="project-tag">Microservices</span>
+                <span class="project-tag">Architecture</span>
+                <span class="project-tag">System Design</span>
+            </div>
+
+            <hr class="project-divider">
+
+            <div class="project-slide">
+                <img src="https://hulashc.github.io/hulash-portfolio/content/uploads/2025/system-design/system-design-1.webp" alt="System Design – Detail">
+            </div>
+
+            <hr class="project-divider">
+
+            <div class="project-detail-grid">
+                <div>
+                    <p class="project-detail-label">Year</p>
+                    <p class="project-detail-value">2025</p>
+                </div>
+                <div>
+                    <p class="project-detail-label">Category</p>
+                    <p class="project-detail-value">Architecture</p>
+                </div>
+                <div>
+                    <p class="project-detail-label">Stack</p>
+                    <p class="project-detail-value">Diagrams · PostgreSQL · Redis · Kafka</p>
+                </div>
+                <div>
+                    <p class="project-detail-label">Status</p>
+                    <p class="project-detail-value">Ongoing Reference</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="../../wp-content/themes/lionheart/dist/js/app.min4584.js?ver=1764167254" defer></script>
+</body>
+</html>
