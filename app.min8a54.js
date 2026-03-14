@@ -7,22 +7,21 @@
 //   - view.intro()    → never called anywhere
 //   - utils.svg()     → no img.svg elements in any project page
 //   - view.direct()   → empty function
-//   - sitename        → was "Benjamin Wilkerson Tousley", now "Hulash Chand"
 // ═════════════════════════════════════════════════════════════════
 
 var sitename = 'Hulash Chand',
-    view     = view     || {},
-    events   = events   || {},
-    utils    = utils    || {},
-    windowObj        = {},
-    mouseObj         = {},
-    scrollPos        = 0,
-    themeOptions     = ['mono', 'dark', 'light'],
+    view = view || {},
+    events = events || {},
+    utils = utils || {},
+    windowObj = {},
+    mouseObj = {},
+    scrollPos = 0,
+    themeOptions = ['mono', 'dark', 'light'],
     themeCurrent,
     projects,
-    indexProject     = 0,
+    indexProject = 0,
     projectScrollTimer = 0,
-    customEasing     = $.bez([.45, .05, .125, 1]);
+    customEasing = $.bez([.45, .05, .125, 1]);
 
 // ────────────────────────────────────────────────────────────────
 // VIEW — page state, theme, window, history
@@ -31,20 +30,28 @@ var sitename = 'Hulash Chand',
 view.init = function () {
     // Push current path into history with correct sitename
     if ('/' !== location.pathname) {
-        history.pushState({ url: location.pathname }, sitename + ' ' + location.pathname, location.pathname);
+        history.pushState({
+            url: location.pathname
+        }, sitename + ' ' + location.pathname, location.pathname);
     } else {
-        history.pushState({ url: '/' }, sitename, '/');
+        history.pushState({
+            url: '/'
+        }, sitename, '/');
     }
 
     // Disable browser's automatic scroll restoration
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
-    $(window).resize(function () { view.resizer(); });
+    $(window).resize(function () {
+        view.resizer();
+    });
     view.resizer();
     view.themeGet();
 
     // Remove init class after brief delay to trigger CSS entrance animations
-    setTimeout(function () { $('body').removeClass('init'); }, 50);
+    setTimeout(function () {
+        $('body').removeClass('init');
+    }, 50);
 
     view.indexGet();
 
@@ -112,25 +119,29 @@ view.indexGet = function () {
 view.indexSort = function (a, c) {
     var d = $('nav');
     d.children().detach().sort(function (e, f) {
-        return c
-            ? $(f).get(0).getAttribute('data-' + a).localeCompare($(e).get(0).getAttribute('data-' + a))
-            : $(e).get(0).getAttribute('data-' + a).localeCompare($(f).get(0).getAttribute('data-' + a));
+        return c ?
+            $(f).get(0).getAttribute('data-' + a).localeCompare($(e).get(0).getAttribute('data-' + a)) :
+            $(e).get(0).getAttribute('data-' + a).localeCompare($(f).get(0).getAttribute('data-' + a));
     }).appendTo(d);
 
     if (a === 'date') {
-        projects.sort(function (e, f) { return f[1].localeCompare(e[1]); });
+        projects.sort(function (e, f) {
+            return f[1].localeCompare(e[1]);
+        });
     } else if (a === 'title') {
-        projects.sort(function (e, f) { return e[5].localeCompare(f[5]); });
+        projects.sort(function (e, f) {
+            return e[5].localeCompare(f[5]);
+        });
     }
 };
 
 view.inViewport = function (a, c, d) {
     var rect = a.getBoundingClientRect();
     var html = document.documentElement;
-    return rect.top    >= 0 - c &&
-           rect.left   >= 0 - d &&
-           rect.bottom <= (window.innerHeight || html.clientHeight) + c &&
-           rect.right  <= (window.innerWidth  || html.clientWidth)  + d;
+    return rect.top >= 0 - c &&
+        rect.left >= 0 - d &&
+        rect.bottom <= (window.innerHeight || html.clientHeight) + c &&
+        rect.right <= (window.innerWidth || html.clientWidth) + d;
 };
 
 // ────────────────────────────────────────────────────────────────
@@ -143,7 +154,9 @@ events.init = function () {
         if (a.state) window.location.href = a.state.url;
     };
 
-    $(window).scroll(function () { events.scroll(); });
+    $(window).scroll(function () {
+        events.scroll();
+    });
 
     // Theme toggle
     $('header').on('click', '.js-theme', function (a) {
@@ -163,9 +176,8 @@ events.init = function () {
             $('body').removeClass('grid').addClass('list');
             localStorage.setItem('indexView', 'list');
         }
-        (760 <= windowObj.w || $('body').hasClass('grid'))
-            ? events.projectListAnimate()
-            : events.scroll();
+        (760 <= windowObj.w || $('body').hasClass('grid')) ?
+        events.projectListAnimate(): events.scroll();
     });
 
     // Index sort toggle (A–Z / date)
@@ -180,9 +192,8 @@ events.init = function () {
             localStorage.setItem('indexSort', 'date');
             view.indexSort('date', true);
         }
-        (760 <= windowObj.w || $('body').hasClass('grid'))
-            ? events.projectListAnimate()
-            : events.scroll();
+        (760 <= windowObj.w || $('body').hasClass('grid')) ?
+        events.projectListAnimate(): events.scroll();
     });
 
     // Slide click — left half = previous, right half = next
@@ -200,10 +211,16 @@ events.init = function () {
         var p = $('#project');
         if (p.hasClass('details')) {
             p.removeClass('details');
-            $('#project-info-details p').slideUp({ duration: 600, easing: 'easeOutCubic' });
+            $('#project-info-details p').slideUp({
+                duration: 600,
+                easing: 'easeOutCubic'
+            });
         } else {
             p.addClass('details');
-            $('#project-info-details p').slideDown({ duration: 600, easing: 'easeOutCubic' });
+            $('#project-info-details p').slideDown({
+                duration: 600,
+                easing: 'easeOutCubic'
+            });
         }
     });
 
@@ -274,12 +291,18 @@ events.scroll = function () {
 
 events.projectListAnimate = function () {
     $('#projects nav a').each(function (a) {
-        $(this).stop(true, false).css({ opacity: 0 })
+        $(this).stop(true, false).css({
+                opacity: 0
+            })
             .delay(20 * a)
-            .animate({ opacity: 1 }, {
+            .animate({
+                opacity: 1
+            }, {
                 duration: 600,
                 easing: customEasing,
-                complete: function () { $(this).removeAttr('style'); }
+                complete: function () {
+                    $(this).removeAttr('style');
+                }
             });
     });
 };
@@ -295,14 +318,16 @@ events.projectInit = function () {
         }
     }
     var nextAuthor = projects[nextIndex][2];
-    var nextName   = projects[nextIndex][3];
+    var nextName = projects[nextIndex][3];
     $('#project-info-counter span.next').html('<span>' + nextAuthor + '</span> <span>' + nextName + '</span>');
 };
 
 events.projectColor = function () {
     if ($('body').hasClass('light')) {
         if ($('#project').data('color')) {
-            $('header a.color').css({ background: $('#project').data('color') });
+            $('header a.color').css({
+                background: $('#project').data('color')
+            });
         } else {
             $('header a.color').removeAttr('style');
         }
@@ -339,7 +364,12 @@ events.projectColorReset = function () {
 events.goPrevious = function () {
     var total = $('#project-slides > div').length;
     indexProject = (indexProject - 1 + total) % total;
-    $('#project-info-counter span.next').stop(true, false).animate({ width: 0 }, { duration: 300, easing: customEasing });
+    $('#project-info-counter span.next').stop(true, false).animate({
+        width: 0
+    }, {
+        duration: 300,
+        easing: customEasing
+    });
     $('#project').removeClass('next');
     events.setProject();
 };
@@ -347,15 +377,20 @@ events.goPrevious = function () {
 events.goNext = function () {
     var total = $('#project-slides > div').length;
     indexProject = (indexProject + 1) % total;
-    $('#project-info-counter span.next').stop(true, false).animate({ width: 0 }, { duration: 300, easing: customEasing });
+    $('#project-info-counter span.next').stop(true, false).animate({
+        width: 0
+    }, {
+        duration: 300,
+        easing: customEasing
+    });
     $('#project').removeClass('next');
     events.setProject();
 };
 
 events.projectScroll = function () {
     $('#project-slides').scroll(function () {
-        var el    = $(this);
-        var left  = el.scrollLeft();
+        var el = $(this);
+        var left = el.scrollLeft();
         var total = $('#project-slides > div').length;
         var width = el.get(0).scrollWidth;
         clearTimeout(projectScrollTimer);
@@ -385,35 +420,46 @@ events.setProject = function () {
     $('#project-info-counter span:eq(0)').text(indexProject + 1);
     events.projectColor();
     $('#project-slides').addClass('disableSnapping');
-    $('#project-slides').stop(true, false).animate(
-        { scrollLeft: indexProject * windowObj.w },
-        {
-            duration: 1200,
-            easing: customEasing,
-            complete: function () { $('#project-slides').removeClass('disableSnapping'); }
+    $('#project-slides').stop(true, false).animate({
+        scrollLeft: indexProject * windowObj.w
+    }, {
+        duration: 1200,
+        easing: customEasing,
+        complete: function () {
+            $('#project-slides').removeClass('disableSnapping');
         }
-    );
+    });
 };
 
 events.setProjectCursor = function () {
     if ($('#project').hasClass('details')) return;
     var $obj = $('#project-slides');
     if (mouseObj.x < windowObj.w / 2) {
-        if (!$obj.hasClass('left'))  { $obj.addClass('left').removeClass('right'); }
+        if (!$obj.hasClass('left')) {
+            $obj.addClass('left').removeClass('right');
+        }
     } else {
-        if (!$obj.hasClass('right')) { $obj.addClass('right').removeClass('left'); }
+        if (!$obj.hasClass('right')) {
+            $obj.addClass('right').removeClass('left');
+        }
     }
 };
 
 events.infoListAnimate = function () {
     $('main ul li').each(function (a) {
         var opacity = $(this).css('opacity');
-        $(this).stop(true, false).css({ opacity: 0 })
+        $(this).stop(true, false).css({
+                opacity: 0
+            })
             .delay(20 * a)
-            .animate({ opacity: opacity }, {
+            .animate({
+                opacity: opacity
+            }, {
                 duration: 600,
                 easing: customEasing,
-                complete: function () { $(this).removeAttr('style'); }
+                complete: function () {
+                    $(this).removeAttr('style');
+                }
             });
     });
 };
