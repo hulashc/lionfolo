@@ -9,7 +9,6 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://use.typekit.net https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://use.typekit.net https://cdn.jsdelivr.net; img-src 'self' data: https: blob:; font-src 'self' https://use.typekit.net https://p.typekit.net https://cdn.jsdelivr.net; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://cdn.jsdelivr.net; frame-src https://www.googletagmanager.com; object-src 'none'; base-uri 'self';">
 
-
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 
     <title>Hulash Chand | Full-Stack Developer &amp; Data Engineer</title>
@@ -128,11 +127,11 @@
 
     <link rel='preconnect' href='https://use.typekit.net/' crossorigin>
     <link rel='preconnect' href='https://p.typekit.net/' crossorigin>
-    <link rel='stylesheet' id='typekit-fonts-css' href='https://use.typekit.net/ucv6hhc.css' type='text/css'
-        media='all' />
-    <link rel='stylesheet' id='lionheart-css' href='wp-content/themes/lionheart/dist/css/app.min8062.css?ver=1764940445'
-        type='text/css' media='all' />
+    <link rel='stylesheet' id='typekit-fonts-css' href='https://use.typekit.net/ucv6hhc.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='lionheart-css' href='wp-content/themes/lionheart/dist/css/app.min8062.css?ver=1764940445' type='text/css' media='all' />
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components/about.css">
+    <link rel="stylesheet" href="components/projects.css">
 
     <!-- jQuery 3.7.1 loaded from wp-includes (local, up-to-date) -->
     <script type="text/javascript" src="wp-includes/js/jquery/jquery.minf43b.js?ver=3.7.1" id="jquery-core-js"></script>
@@ -160,140 +159,12 @@
         }
     </style>
 
-    <!-- ═══════════ PROJECTS SECTION STYLES ═══════════ -->
-    <style>
-        .projects-section {
-            background: #0d0d0f;
-            padding: 80px 24px 100px;
-        }
-
-        .projects-section__heading {
-            text-align: center;
-            margin-bottom: 56px;
-        }
-
-        .projects-section__heading .txt-script {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .projects-controls {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto 32px;
-            gap: 16px;
-        }
-
-        .projects-controls button {
-            background: none;
-            border: none;
-            font-family: inherit;
-            font-size: 14px;
-            font-weight: 300;
-            letter-spacing: 0.04em;
-            color: rgba(255, 255, 255, 0.4);
-            cursor: pointer;
-            padding: 0;
-            transition: color 0.2s ease;
-        }
-
-        .projects-controls button:hover,
-        .projects-controls button.active {
-            color: #fff;
-            font-weight: 500;
-        }
-
-        .projects-list {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .project-list-item {
-            display: flex;
-            align-items: baseline;
-            gap: 0;
-            padding: 16px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-            text-decoration: none;
-            color: rgba(255, 255, 255, 0.55);
-            font-size: 20px;
-            font-weight: 300;
-            letter-spacing: 0.01em;
-            transition: color 0.2s ease;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .project-list-item::before {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: #e8e6e1;
-            margin-right: 0;
-            transition: width 0.35s cubic-bezier(0.075, 0.82, 0.165, 1),
-                margin-right 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
-            flex-shrink: 0;
-            align-self: center;
-        }
-
-        .project-list-item:hover::before {
-            width: 24px;
-            margin-right: 14px;
-        }
-
-        .project-list-item:hover {
-            color: #fff;
-        }
-
-        .project-list-item__name {
-            flex: 1;
-        }
-
-        .project-list-item__sub {
-            font-size: 14px;
-            opacity: 0.4;
-            font-weight: 300;
-        }
-
-        .projects-list__preview {
-            display: none;
-            position: fixed;
-            pointer-events: none;
-            z-index: 999;
-            width: 380px;
-            aspect-ratio: 16/9;
-            object-fit: cover;
-            border-radius: 2px;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
-            transition: opacity 0.2s ease;
-            opacity: 0;
-        }
-
-        @media (max-width: 760px) {
-            .projects-list__preview {
-                display: none !important;
-            }
-
-            .project-list-item {
-                font-size: 16px;
-            }
-
-            .project-list-item__sub {
-                display: none;
-            }
-        }
-    </style>
     <!-- Lenis smooth scroll -->
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
     <!-- GSAP + ScrollTrigger -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
 
 </head>
 
@@ -350,8 +221,7 @@
                 <div class="header__btn">
                     <a href='https://github.com/hulashc' target='_blank' rel='noopener noreferrer'
                         class='btn--small btn' role="button"><span class="btn__txt"><span class="btn__txt-inner"
-                                data-txt="View GitHub">View
-                                GitHub</span></span></a>
+                                data-txt="View GitHub">View GitHub</span></span></a>
                 </div>
             </div>
         </header>
@@ -443,8 +313,7 @@
                         <div class="link-cards__item-body" data-reveal-hidden>
                             <p class="link-cards__item-txt txt-tiny">Building responsive, performant web interfaces with
                                 Next.js, React, TypeScript and Tailwind CSS. Experienced with real-time data,
-                                animations,
-                                and component-driven architecture.</p>
+                                animations, and component-driven architecture.</p>
                             <div class="link-cards__item-link">
                                 <a href='https://github.com/hulashc' target='_blank' rel='noopener noreferrer'
                                     class='secondary-link secondary-link--full'><span
@@ -457,8 +326,7 @@
                         <div class="link-cards__item-body" data-reveal-hidden>
                             <p class="link-cards__item-txt txt-tiny">Designing and managing databases with Supabase and
                                 PostgreSQL, building data pipelines in Python and SQL, and creating REST APIs.
-                                Comfortable
-                                with ETL processes, data modelling, and backend logic.</p>
+                                Comfortable with ETL processes, data modelling, and backend logic.</p>
                             <div class="link-cards__item-link">
                                 <a href='https://github.com/hulashc' target='_blank' rel='noopener noreferrer'
                                     class='secondary-link secondary-link--full'><span
@@ -483,9 +351,8 @@
                         <p class="link-cards__item-title" data-reveal-trigger>Data Visualisation</p>
                         <div class="link-cards__item-body" data-reveal-hidden>
                             <p class="link-cards__item-txt txt-tiny">Creating rich, interactive dashboards and charts
-                                using
-                                Tableau, Plotly, and custom React components. Specialising in financial and sports data
-                                visualisation that tells a clear story.</p>
+                                using Tableau, Plotly, and custom React components. Specialising in financial and sports
+                                data visualisation that tells a clear story.</p>
                             <div class="link-cards__item-link">
                                 <a href='https://github.com/hulashc' target='_blank' rel='noopener noreferrer'
                                     class='secondary-link secondary-link--full'><span
@@ -497,9 +364,7 @@
             </div>
         </section>
 
-
         <section id="projects" class="projects-section">
-
             <div class="projects-section__heading">
                 <span class="txt-script h2" style="color:#f5d2b5;">Selected Work</span>
                 <h2 style="color:#e8e6e1; margin-top:8px;">Projects</h2>
@@ -548,7 +413,6 @@
                     <span class="project-list-item__sub">Telugu</span>
                 </a>
             </div>
-
         </section>
 
         <section id="section-5" class="section-quote-slider pv-large section-colorway-white">
@@ -613,7 +477,7 @@
                             </article>
                         </div>
                         <div class="flickity__item">
-                            name<article class="article bg-colorway-light-orange">
+                            <article class="article bg-colorway-light-orange">
                                 <div class="meta-bar">
                                     <div class="meta-bar__reading-time"><span>5</span> <span>min</span></div>
                                     <div class="meta-bar__date">February 2026</div>
@@ -687,8 +551,7 @@
                 <div class="txt-center content">
                     <a href='https://github.com/hulashc' target='_blank' rel='noopener noreferrer'
                         class='btn--outline btn btn--regular'><span class="btn__txt"><span class="btn__txt-inner"
-                                data-txt="All Posts">All
-                                Posts</span></span></a>
+                                data-txt="All Posts">All Posts</span></span></a>
                 </div>
             </div>
         </section>
@@ -719,7 +582,6 @@
                         <div class="img-links__item-title">
                             <p class="img-links__item-title-txt">Python</p>
                         </div>
-
                     </a>
                 </li>
                 <li class="img-links__item" data-img-link>
@@ -755,13 +617,11 @@
             style="position: relative; overflow: hidden; background: none;">
             <div class="section-inset" style="padding: 0;">
                 <div class="content-over-slim-img" data-parallax style="position: relative;">
-
                     <video
                         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;"
                         autoplay muted loop playsinline poster="wp-content/uploads/2025/11/Black-cover-2560x1280.webp">
                         <source src="wp-content/uploads/2025/12/hero-banner-desktop.mp4" type="video/mp4">
                     </video>
-
                     <div class="content-over-slim-img__inner txt-colorway-light"
                         style="position: relative; z-index: 2;">
                         <div class="content-over-slim__content section section--small pv-medium">
@@ -784,14 +644,10 @@
             </div>
         </section>
 
-
-
         <div class='sticky-cta-btn' data-sticky-cta-btn>
             <a href="#" id="email-hireme-btn" class='btn--large btn--sticky btn' role="button"><span
                     class="btn__txt"><span class="btn__txt-inner" data-txt="Hire Me">Hire Me</span></span></a>
         </div>
-
-
 
         <section id="footer-1" class="section-call-to-action bg-colorway-beige">
             <div class="cta">
@@ -913,9 +769,7 @@
                 if (currentSort === 'date') return parseInt(b.dataset.date) - parseInt(a.dataset.date);
                 return a.dataset.name.localeCompare(b.dataset.name);
             });
-            items.forEach(function (el) {
-                container.appendChild(el);
-            });
+            items.forEach(function (el) { container.appendChild(el); });
             container.appendChild(preview);
         }
 
@@ -937,8 +791,7 @@
         });
 
         function movePreview(e) {
-            var x = e.clientX + 24,
-                y = e.clientY - 80;
+            var x = e.clientX + 24, y = e.clientY - 80;
             if (x + 380 > window.innerWidth) x = e.clientX - 404;
             preview.style.left = x + 'px';
             preview.style.top = y + 'px';
