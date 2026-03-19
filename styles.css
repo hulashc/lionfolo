@@ -832,3 +832,60 @@ body.info .tab-btn {
 .flagship-banner__header-txt {
     color: #ffffff !important;
 }
+
+/* Section 10 Video Stretch Fix */
+.section-text-over-slim-image .section-inset {
+    padding: 0;
+}
+
+.content-over-slim-img {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.content-over-slim-img__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.content-over-slim-img__inner {
+    position: relative;
+    z-index: 2;
+}
+
+/* Section 10 - remove grey background only */
+#section-10 {
+    background: transparent !important;
+}
+
+#section-10 .section-inset {
+    padding: 0 !important;
+}
+
+.content-over-slim-img {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.content-over-slim-img__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.content-over-slim-img__inner {
+    position: relative;
+    z-index: 2;
+}
+
