@@ -803,3 +803,32 @@ body.info .tab-btn {
 #project-slides .large:has(iframe) iframe {
   pointer-events: all;
 }
+
+/* Hero Banner Video Fix */
+.flagship-banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.flagship-banner__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.flagship-banner__header-txt,
+.flagship-banner__content,
+.flagship-banner__txt {
+    position: relative;
+    z-index: 2;
+}
+
+.flagship-banner__title span,
+.flagship-banner__txt-col,
+.flagship-banner__header-txt {
+    color: #ffffff !important;
+}
