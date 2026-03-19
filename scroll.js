@@ -258,10 +258,6 @@ const sections = [{
         color: '#ffffff'
     },
     {
-        trigger: '#contact',
-        color: '#0a1628'
-    },
-    {
         trigger: '#blog',
         color: '#f0ece4'
     },
@@ -314,3 +310,53 @@ if (skillsTrack) {
         }
     });
 }
+
+// ── CUSTOM CURSOR ────────────────────────────────────────
+const cursor = document.getElementById('cursor');
+const follower = document.getElementById('cursor-follower');
+
+let mouseX = 0,
+    mouseY = 0;
+let followerX = 0,
+    followerY = 0;
+
+document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+});
+
+function animateFollower() {
+    followerX += (mouseX - followerX) * 0.12;
+    followerY += (mouseY - followerY) * 0.12;
+    follower.style.left = followerX + 'px';
+    follower.style.top = followerY + 'px';
+    requestAnimationFrame(animateFollower);
+}
+animateFollower();
+
+document.querySelectorAll('a, button, .btn, .link-cards__item, .project-list-item').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursor.classList.add('is-hovering');
+        follower.classList.add('is-hovering');
+    });
+    el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('is-hovering');
+        follower.classList.remove('is-hovering');
+    });
+});
+
+// Hide cursor when leaving window
+document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+    follower.style.opacity = '0';
+});
+document.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '1';
+    follower.style.opacity = '1';
+});
+
+animateFollower();
+cursor.style.opacity = '1'; // ← add this
+follower.style.opacity = '1'; // ← and this
