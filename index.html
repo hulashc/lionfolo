@@ -177,16 +177,11 @@
 </head>
 
 <body class="home page">
-    <div id="cursor" class="cursor"></div>
-    <div id="cursor-follower" class="cursor-follower"></div>
 
     <div class="page-wrap">
 
         <nav class='main-menu' data-menu='main' data-lenis-prevent>
             <ul id="menu-main" class="menu">
-                <li id="menu-item-1868" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1868">
-                    <a href="#about">About</a>
-                </li>
                 <li id="menu-item-1869" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1869">
                     <a href="projects.html">Projects</a>
                 </li>
@@ -416,65 +411,6 @@
         </div>
 
         <footer class="footer">
-            <div class="footer__section footer__section--main pv-small bg-colorway-black">
-                <div class="footer__section-inner">
-                    <div class="footer__btns">
-                        <a href='https://github.com/hulashc' target='_blank' rel='noopener noreferrer'
-                            class='btn--outline btn btn--regular'><span class="btn__txt"><span class="btn__txt-inner"
-                                    data-txt="GitHub">GitHub</span></span></a>
-                        <a href='https://www.linkedin.com/in/hulash' target='_blank' rel='noopener noreferrer'
-                            class='btn--outline btn btn--regular'><span class="btn__txt"><span class="btn__txt-inner"
-                                    data-txt="LinkedIn">LinkedIn</span></span></a>
-                        <a href="#" id="email-footer-btn" class='btn--outline btn btn--regular'><span
-                                class="btn__txt"><span class="btn__txt-inner" data-txt="Email Me">Email
-                                    Me</span></span></a>
-                    </div>
-                    <div class="footer__cols">
-                        <div class="footer__cols-menus">
-                            <div class="footer__cols-menu">
-                                <p class="footer__cols-menu-title h6" data-toggle-target="footer-menu-0"
-                                    data-toggle-max="1024">Skills</p>
-                                <div class="footer__cols-menu-items" data-toggle="footer-menu-0">
-                                    <ul id="menu-services" class="menu">
-                                        <li class="menu-item"><a href="#skills">Front-End Development</a></li>
-                                        <li class="menu-item"><a href="#skills">Back-End &amp; Data Engineering</a></li>
-                                        <li class="menu-item"><a href="#skills">Machine Learning &amp; AI</a></li>
-                                        <li class="menu-item"><a href="#skills">Data Visualisation</a></li>
-                                        <li class="menu-item"><a href="#skills">Database Design</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="footer__cols-menu">
-                                <p class="footer__cols-menu-title h6" data-toggle-target="footer-menu-1"
-                                    data-toggle-max="1024">Navigation</p>
-                                <div class="footer__cols-menu-items" data-toggle="footer-menu-1">
-                                    <ul id="menu-main-1" class="menu">
-                                        <li class="menu-item"><a href="#about">About</a></li>
-                                        <li class="menu-item"><a href="projects.html">Projects</a></li>
-                                        <li class="menu-item"><a href="#skills">Skills</a></li>
-                                        <li class="menu-item"><a href="blog.html">Blog</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="footer__cols-menu">
-                                <p class="footer__cols-menu-title h6" data-toggle-target="footer-menu-3"
-                                    data-toggle-max="1024">Connect</p>
-                                <div class="footer__cols-menu-items" data-toggle="footer-menu-3">
-                                    <ul id="menu-connect" class="menu">
-                                        <li class="menu-item"><a target="_blank" rel="noopener noreferrer"
-                                                href="https://www.linkedin.com/in/hulash">LinkedIn</a></li>
-                                        <li class="menu-item"><a target="_blank" rel="noopener noreferrer"
-                                                href="https://github.com/hulashc">GitHub</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer__meta">
-                        <p class="footer__meta-copyright">&copy; 2026 Hulash Chand. All rights reserved.</p>
-                    </div>
-                </div>
-            </div>
             <div class="footer__section footer__section--strapline bg-colorway-black">
                 <div class="footer__section-inner">
                     <p class="footer__strapline"><span data-fit-txt>Build things that matter</span></p>
@@ -501,48 +437,6 @@
     </script>
 
     <script src="scroll.js" defer></script>
-
-    <!-- ═══════════ STATS COUNTER JS ═══════════ -->
-    <script>
-        (function () {
-            var counters = document.querySelectorAll('.about-stats__number');
-            var triggered = false;
-
-            function animateCounters() {
-                counters.forEach(function (el) {
-                    var target = parseInt(el.dataset.count);
-                    var suffix = el.dataset.suffix || '';
-                    var start = 0;
-                    var duration = 1500;
-                    var startTime = null;
-
-                    function step(timestamp) {
-                        if (!startTime) startTime = timestamp;
-                        var progress = Math.min((timestamp - startTime) / duration, 1);
-                        var value = Math.floor(progress * target);
-                        el.textContent = value + suffix;
-                        if (progress < 1) requestAnimationFrame(step);
-                    }
-                    requestAnimationFrame(step);
-                });
-            }
-
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting && !triggered) {
-                        triggered = true;
-                        animateCounters();
-                    }
-                });
-            }, {
-                threshold: 0.5
-            });
-
-            var statsEl = document.querySelector('.about-stats');
-            if (statsEl) observer.observe(statsEl);
-        })();
-    </script>
-
 </body>
 
 </html>
